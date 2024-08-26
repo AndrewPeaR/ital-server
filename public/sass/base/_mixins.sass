@@ -1,0 +1,35 @@
+@mixin font-styles($font-size, $font-weight, $line-height, $letter-spacing, $color)
+    font-size: $font-size
+    font-weight: $font-weight
+    line-height: $line-height
+    letter-spacing: $letter-spacing
+    color: $color
+
+@mixin transition
+    transition: all 0.35s ease-in-out
+
+@mixin fast-transition
+    transition: all 0.2s ease-out
+
+@mixin animation($name)
+    animation-name: $name
+    animation-duration: 3s
+    animation-timing-function: ease
+@mixin fast-animation($name)
+    animation-name: $name
+    animation-duration: 1.5s
+    animation-timing-function: ease
+
+@mixin display-animate
+    animation-name: display-animate
+    animation-duration: 3s
+    animation-timing-function: ease
+    animation-fill-mode: both
+
+@keyframes display-animate 
+    0%
+        opacity: 0
+        transform: translateY(100px)
+    100%
+        opacity: 1
+        transform: translateY(0)

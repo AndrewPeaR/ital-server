@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <div class="uptop"><img src="./img/up.svg" alt="up" /></div>
+    <header>
+      <div class="wrapper">
+        <div class="header">
+          <div class="header__wrapper">
+            <div class="header__burger burger">
+              <span></span>
+            </div>
+            <div class="header__get-partner btn">Стать партнером</div>
+          </div>
+          <div class="btn header__contacts">Контакты</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <div class="wrapper">
+          <div class="nav__burger burger">
+            <span></span>
+          </div>
+          <div class="nav__wrapper">
+            <ul class="nav__items">
+              <li class="nav__item"><a href="index.html">Главная</a></li>
+              <li class="nav__item"><a href="about.html">О компании</a></li>
+              <li class="nav__item"><a href="vendors.html">Наши вендоры</a></li>
+              <li class="nav__item"><a href="contacts.html">Контакты</a></li>
+              <li class="nav__item"><a href="#">Обратная связь</a></li>
+            </ul>
+            <div class="nav__address">
+              <a href="tel:89088967788" class="nav__phone"
+                >+7 (908) 896 77 88</a
+              >
+              <a href="#" class="nav__map">г. Москва, ул. Первого Мая, д. 67</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section>
+        <div class="wrapper">
+            <div class="contacts">
+                <h2 class="section-title contacts-title">Есть вопросы?<br />Свяжитесь с нами!</h2>
+                <div class="contacts__map">
+                    <div class="contacts__toggle">
+                        <input id="toggle__checkbox" type="checkbox" class="toggle__checkbox">
+                        <label for="toggle__checkbox" class="toggle">
+                            <div class="toggle__content">
+                                <p class="toggle__text">Адрес</p>
+                                <p class="toggle__text">Фото офиса</p>
+                            </div>
+                            <div class="toggle__switch">&nbsp;</div>
+                        </label>
+                        <div class="toggle__blocks">
+                            <div class="toggle__map">
+                                <div id="map" style="width: 100%; height: 100%"></div>
+                            </div>
+                            <div class="toggle__photos">
+                                <div class="photos__wrapper">
+                                    <div>
+                                        <img src="./img/news-image.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="./img/news-image.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="./img/news-image.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="./img/news-image.png" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="./img/news-image.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__address">
+                    <img src="./img/office.png" alt="office">
+                    <div class="contacts__info">
+                        <div class="info">
+                            <h3 class="info__title">Головной офис</h3>
+                            <p class="info__text">117133, Москва, 21-й км., Киевское шоссе 3, строение 1, Бизнес-парк G10</p>
+                            <p class="info__text"><a href="#">8 (800) 551-75-75</a><br />время работы: 9:00 - 19:00</p>
+                            <p class="info__text">email: <a href="#">support@it-alliance-company.ru</a></p>
+                        </div>
+                        <a class="info__button" href="#">Обратная связь</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bg">
+      <div class="wrapper">
+        <div class="footer">
+          <div class="footer__address">
+            <div class="footer__company">
+              <div class="footer__logo">
+                <a href="#">IT Alliance</a>
+              </div>
+              <div class="footer__social">
+                <a href="#"><img src="./img/whatsapp.svg" alt="whatsapp" /></a>
+                <a href="#"
+                  ><img src="./img/messanger.svg" alt="messanger"
+                /></a>
+                <a href="#"><img src="./img/YouTube.svg" alt="YouTube" /></a>
+              </div>
+            </div>
+            <ul class="footer__contacts">
+              <li class="footer__contact">
+                Адрес:
+                <span
+                  >Москва, Киевское шоссе 3, стр.1, 117133 Бизнес-парк G10</span
+                >
+              </li>
+              <li class="footer__contact">
+                Телефон: <span>+7 954 543 54 54</span>
+              </li>
+              <li class="footer__contact">
+                Email: <span>verycool@email.ru</span>
+              </li>
+            </ul>
+            <div class="footer__credentials">
+              <p>© Все права защищены. Made by Andrew Pear</p>
+            </div>
+          </div>
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-title">О компании</a>
+            <ul class="footer__anchors">
+              <li><a href="#" class="footer__anchor">Описание</a></li>
+              <li><a href="#" class="footer__anchor">Фото офиса</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-title">Вендоры</a>
+            <ul class="footer__anchors">
+              <li><a href="#" class="footer__anchor">Наши вендоры</a></li>
+              <li>
+                <a href="#" class="footer__anchor"
+                  >Авторизованный<br />партнер</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-title">Контакты</a>
+            <ul class="footer__anchors">
+              <li><a href="#" class="footer__anchor">Карта</a></li>
+              <li><a href="#" class="footer__anchor">Адрес</a></li>
+              <li><a href="#" class="footer__anchor">График работы</a></li>
+            </ul>
+          </div>
+          <div class="footer__nav">
+            <a href="#" class="footer__nav-title">Поддержка</a>
+            <ul class="footer__anchors">
+              <li><a href="#" class="footer__anchor">FAQ</a></li>
+              <li><a href="#" class="footer__anchor">Написать нам</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("asking__form")
+        .addEventListener("submit", function (event) {
+          let response = grecaptcha.getResponse();
+          if (response.length == 0) {
+            // alert('Вы не прошли проверку CAPTCHA должным образом');
+            // console.log("Проверка не пройдена");
+            // TODO
+            // Красивый обработчик не пройденной капчи (отображать ошибку)
+            event.preventDefault();
+            return false;
+          }
+        });
+    </script>
+    <script src="./js/animationObserver.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=a8a171f0-1d76-426b-9c1f-c6c58d7df875&lang=ru_RU"></script>
+    <script>
+      initMap();
+
+      async function initMap() {
+        // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+        await ymaps3.ready;
+
+        const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+
+        const map = new YMap(document.getElementById("map"), {
+          location: {
+            center: [37.453583, 55.633373],
+            zoom: 16.55,
+          },
+        });
+
+        const { YMapDefaultMarker } = await ymaps3.import(
+          "@yandex/ymaps3-markers@0.0.1"
+        );
+
+        let marker = new YMapDefaultMarker({
+          coordinates: [37.453583, 55.633373],
+          draggable: false,
+          title: "Адрес: 117133, г.Москва",
+          subtitle: "Киевское шоссе 3, стр. 1, G10",
+        });
+
+        map.addChild(new YMapDefaultSchemeLayer());
+        map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
+        map.addChild(marker);
+      }
+    </script>
+  </body>
+</html>

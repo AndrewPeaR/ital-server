@@ -1,0 +1,109 @@
+.wrapper
+    max-width: 1120px
+    margin: 0 auto
+
+*
+    font-family: $font-main
+
+html, body
+    background-color: $semiwhite
+
+.uptop
+    position: absolute
+    position: fixed
+    bottom: 80px
+    right: 7%
+    width: 40px
+    height: 40px
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 10
+    background-color: $blue
+    border-radius: 4px
+
+.btn
+    display: inline-block
+    cursor: pointer
+    height: 53px
+    padding: 13px 27px
+    border: 1px solid $dark
+    text-transform: uppercase
+    @include fast-transition
+    @include font-styles(20px, 500, normal, 0, $dark)
+
+    &:hover
+        border-color: none
+        background-color: $dark
+        color: $white
+
+    &_white
+        border: 1px solid $semiwhite
+        color: $semiwhite
+        &:hover
+            background-color: $semiwhite
+            color: $dark
+.btn_wrapper
+    text-align: center
+
+.section-title
+    margin-bottom: 60px
+    text-transform: uppercase
+    @include font-styles(68px, 700, normal, 0, $blue)
+// ADAPTIVE MOBILE
+// .open
+//     display: flex !important
+.burger
+    cursor: pointer
+    display: flex
+    position: relative
+    z-index: 50
+    align-items: center
+    justify-content: center
+    width: 53px
+    height: 53px
+    border: 1px solid $dark
+    @include fast-transition
+
+    &::before,
+    &::after
+        content: ""
+        position: absolute
+        height: 2px
+        // width: 23px
+        width: 45%
+        background-color: $dark
+        transition: all 0.3s ease 0s
+
+    &::before
+        top: 20px
+
+    &::after
+        bottom: 20px
+
+    &:hover
+        border-color: none
+        background-color: $dark
+        &::before,
+        &::after
+            background-color: $white
+
+    &.active span
+        transform: scale(0)
+
+    &.active
+        border: none
+        background-color: $dark
+        &::before
+            background-color: $white
+            top: 50%
+            transform: rotate(-45deg) translate(0, -50%)
+
+        &::after
+            background-color: $white
+            bottom: 50%
+            transform: rotate(45deg) translate(0, 50%)
+
+.block-scroll
+    overflow: hidden

@@ -1,0 +1,62 @@
+.nav
+    position: absolute
+    z-index: 999
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    transform: translateY(-100vh)
+    background-color: $semiwhite
+    @include transition
+    padding-top: 40px
+    overflow: hidden
+    &__logo
+        position: absolute
+        top: 0
+        right: 0
+        max-height: 53px
+        z-index: 3
+    .wrapper
+        position: relative
+        &::after
+            content: url(../img/nav-image.svg)
+            position: absolute
+            top: -200px
+            right: -350px
+    &__burger
+        margin-bottom: 55px
+    .nav__wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        .nav__items
+            display: flex
+            flex-direction: column
+            gap: 21px
+            margin-bottom: 60px
+            .nav__item a
+                text-transform: uppercase
+                @include fast-transition
+                @include font-styles(56px, 600, 130%, 0, $dark)
+                &:hover
+                    color: $blue
+        
+        .nav__address
+            display: flex
+            flex-direction: column
+            gap: 10px
+            a
+                @include font-styles(24px, 500, 130%, 0, $dark)
+
+.open
+    transform: translateY(0px)
+    .wrapper
+        &::after
+            @include animation(nav-image)
+
+@keyframes nav-image
+    0%
+        top: -700px
+        transform: rotate(-100deg)
+    100%
+        transform: rotate(0deg)

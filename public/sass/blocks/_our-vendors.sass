@@ -1,0 +1,39 @@
+.our-vendors
+    margin-top: 100px
+    margin-bottom: 95px
+    &__title
+        max-width: 475px
+        margin-bottom: 86px
+    &__companies
+        display: flex
+        justify-content: space-between
+        gap: 30px
+        margin-bottom: 30px
+    &__info
+        margin-bottom: 33px
+        text-align: justify
+        @include font-styles(20px, 400, normal, 0, $dark)
+.our-vendors__company
+    &-image
+        display: flex
+        align-items: center
+        height: 250px
+        padding: 0 40px
+        border: 2px solid $dark
+        @include fast-transition
+    &-button
+        border: 2px solid $dark
+        border-top: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 30px 0
+        @include font-styles(32px, 500, normal, 0, $dark)
+        @include fast-transition
+    &:hover
+        .our-vendors__company-image
+            background-color: $white
+        .our-vendors__company-button
+            background-color: $dark
+            color: $semiwhite
+        

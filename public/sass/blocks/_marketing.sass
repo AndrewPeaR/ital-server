@@ -1,0 +1,40 @@
+.marketing
+    &__header
+        display: flex
+        align-items: center
+        flex-direction: column
+        .marketing__title
+            text-transform: uppercase
+            text-align: center
+            margin-bottom: -70px
+            @include font-styles(150px, 600, 90%, 0, $dark)
+            &.activate-animation
+                @include fast-animation(marketing__title)
+        .marketing__poster
+            width: 68%
+            &.activate-animation
+                @include fast-animation(marketing__poster)
+    &__info
+        p
+            @include font-styles(20px, 400, normal, 0, $dark)
+            text-align: justify
+            margin-bottom: 20px
+
+
+@keyframes marketing__title
+    0%
+        opacity: 0
+        transform: translateY(100px)
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+@keyframes marketing__poster
+    0%
+        opacity: 0
+        transform: translateY(50px)
+    100%
+        opacity: 1
+        transform: translateY(0)
+
+            

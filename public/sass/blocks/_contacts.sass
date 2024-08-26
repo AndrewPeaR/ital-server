@@ -1,0 +1,121 @@
+.contacts
+    margin-top: 76px
+    margin-bottom: 102px
+    &-title
+        color: $dark
+        line-height: 110%
+    &__map
+        margin-bottom: 66px
+    .toggle__checkbox
+        position: absolute
+        z-index: -1
+        opacity: 0
+    .toggle
+        margin-bottom: 46px
+        position: relative
+        display: block
+        width: 100%
+        border: 2px solid $dark
+        padding: 36px 12px
+        &__content
+            position: relative
+            z-index: 4
+            display: grid
+            grid-template-columns: 1fr 1fr
+            text-align: center
+            text-transform: uppercase
+            @include font-styles(32px, 500, 110%, 0, $semiwhite)
+            .toggle__text
+                @include fast-transition
+                &:nth-child(2)
+                    color: $dark
+        &__switch
+            @include fast-transition
+            z-index: 1
+            position: absolute
+            top: 10px
+            bottom: 10px
+            left: 13px
+            width: 48%
+            background-color: $dark
+        &__blocks
+            position: relative
+            overflow: hidden
+            .toggle__map, .toggle__photos
+                width: 100%
+                @include transition
+                height: 547px
+            .toggle__map
+                // background-color: red
+            .toggle__photos
+                position: absolute
+                padding-left: 260px
+                z-index: 10
+                transform: translateX(100%)
+                top: 0
+                left: 0
+                .photos__wrapper
+                    display: grid
+                    grid-template-rows: repeat(2, 1fr)
+                    grid-template-columns: repeat(4, 1fr)
+                    gap: 30px
+                    width: 100%
+                    height: 100%
+                    & div 
+                        overflow: hidden
+                        filter: brightness(60%)
+                        @include fast-transition
+                        &:hover
+                            filter: brightness(100%)
+                            img
+                                height: 120%
+                        img
+                            height: 100%
+                            object-fit: cover
+                            object-position: center center
+                            @include fast-transition
+                                
+                        &:first-child
+                            grid-area: 1 / 1 / 3 / 3
+    .toggle__checkbox:checked + .toggle .toggle__text:nth-child(2)
+        color: $semiwhite
+    .toggle__checkbox:checked + .toggle .toggle__text:nth-child(1)
+        color: $dark
+    .toggle__checkbox:checked + .toggle .toggle__switch
+        transform: translateX(104%)
+    .toggle__checkbox:checked ~ .toggle__blocks .toggle__map
+        position: absolute
+        padding-right: 260px
+        z-index: 20
+        transform: translateX(-100%)
+    .toggle__checkbox:checked ~ .toggle__blocks .toggle__photos
+        position: relative
+        padding-left: 0
+        transform: translateX(0)
+
+    &__address
+        display: flex
+        justify-content: space-between
+        gap: 73px
+        .contacts__info
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+            .info
+                &__title
+                    margin-bottom: 33px
+                    text-transform: uppercase
+                    @include font-styles(36px, 500, 110%, 0, $dark)
+                &__text
+                    margin-bottom: 30px
+                    @include font-styles(18px, 500, 110%, 0, $dark)
+                    a
+                        color: $dark
+                &__button
+                    padding: 18px 65px
+                    background-color: $dark
+                    @include font-styles(18px, 500, 110%, 0, $semiwhite)
+    .ymaps3x0--main-engine-container canvas
+        filter: grayscale(100%)           
+                

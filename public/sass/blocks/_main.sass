@@ -1,0 +1,29 @@
+.main-bg
+    background: linear-gradient(90deg, #0a4475 0%, #137fdb 100%)
+    overflow: hidden
+    .wrapper
+        position: relative
+        padding: 126px 0 145px 0
+        &::after
+            content: url(../img/main-image.svg)
+            @include animation(main-image)
+            position: absolute
+            top: -300px
+            right: -200px
+
+.main
+    @include animation(display-animate)
+    &__title
+        max-width: 721px
+        margin-bottom: 30px
+        @include font-styles(75px, 600, 100%, 0, $semiwhite)
+    &__description
+        @include font-styles(37px, 400, normal, 0, $semiwhite)
+
+@keyframes main-image
+    0%
+        top: 500px
+        transform: rotate(100deg)
+    100%
+        transform: rotate(0deg)
+        top: -300px

@@ -1,0 +1,43 @@
+.footer-bg
+    background-color: $dark
+
+.footer
+    display: flex
+    justify-content: space-between
+    padding: 74px 0 66px 0
+    &__company
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 26px
+        .footer__logo
+            max-width: 182px
+            // @include font-styles(40px, 400, normal, 0, $semiwhite)
+        .footer__social
+            display: flex
+            justify-content: flex-end
+            gap: 18px
+    &__contacts
+        display: flex
+        flex-direction: column
+        gap: 6px
+        margin-bottom: 26px
+        .footer__contact
+            @include font-styles(16px, 400, normal, 0, $semiwhite)
+            span
+                opacity: 0.6
+    &__credentials
+        @include font-styles(12px, 400, normal, 0, $semiwhite)
+    &__nav
+        .footer__nav-title
+            text-transform: uppercase
+            margin-bottom: 13px
+            @include font-styles(16px, 400, normal, 0, $semiwhite)
+        .footer__anchors
+            margin-top: 16px
+            display: flex
+            flex-direction: column
+            gap: 6px
+            .footer__anchor
+                opacity: 0.6
+                @include font-styles(16px,400, normal, 0, $semiwhite)

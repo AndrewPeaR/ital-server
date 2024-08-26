@@ -1,0 +1,30 @@
+.partner
+    margin-bottom: 80px
+    &__title
+        color: $dark
+        max-width: 770px
+    &__info
+        display: flex
+        justify-content: space-between
+        .partner__description
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            .partner__text
+                max-width: 490px
+                text-align: justify
+                @include font-styles(20px, 400, normal, 0, $dark)
+            .partner__learn
+                margin-bottom: 10px
+                @include font-styles(20px, 400, normal, 0, $dark)
+            .partner__download
+                display: flex
+                gap: 10px
+                align-items: center
+                &::before
+                    padding-top: 5px
+                    content: url(../img/file.svg)
+                p:nth-child(1)
+                    @include font-styles(20px, 400, normal, 0, $dark)
+                p:nth-child(2)
+                    @include font-styles(12px, 200, normal, 0, $dark)

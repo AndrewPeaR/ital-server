@@ -1,0 +1,46 @@
+.vendors
+    margin-bottom: 126px
+    &__title
+        max-width: 350px
+        line-height: 110%
+        margin-bottom: 86px
+    &__list
+        margin-bottom: 20px
+        .swiper-wrapper
+            height: 710px
+        .swiper__vendors-scrollbar
+            margin-top: 40px
+            border: 2px solid $dark
+            // padding: 1px 0
+            background-color: $semiwhite
+            width: 100%
+            &__drag
+                background-color: $dark
+                height: 6px
+    &__description
+        display: flex
+        justify-content: space-between
+    &__text
+        padding-left: 5px
+        display: flex
+        gap: 10px
+        max-width: 890px
+        @include font-styles(20px, 400, normal, 0, $dark)
+        &::before
+            content: '*'
+    &__controls
+        display: flex
+        gap: 27px
+        &-next, &-back
+            cursor: pointer
+            z-index: 6
+            width: 53px
+            height: 53px
+            padding: 15px 12px
+            background-size: 60%
+            background-position: center
+            background-repeat: no-repeat
+            background-image: url(../img/arrow.svg)
+            background-color: $dark
+        &-next
+            transform: rotate(180deg)

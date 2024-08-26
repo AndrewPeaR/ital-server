@@ -1,0 +1,38 @@
+<% layout('layouts/admin') %>
+
+<div class="container">
+  <h1 class="mb-5">Заявки</h1>
+  <% if(questions.length === 0) {%>
+  <p>Сейчас нет новых заявок</p>
+  <% } else { %>
+  <div class="row mb-5 pb-5 gy-3">
+    <% questions.forEach(function(item){ %>
+    <div class="card px-3 rounded-3">
+      <div class="card-body">
+        <h5 class="card-title">Заявка #<%= item.id %></h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Статус: <% if(item.status===false) { %>
+          <span class="text-danger">Новая</span>
+          <% } else if(item.status===true) { %>
+          <span class="text-success">Выполнено</span>
+          <% } %>
+        </h6>
+        <p class="card-text"><%= item.question %></p>
+        <p class="card-text">
+          Имя: <%= item.name %> <br />Телефон: <%= item.phoneNumber %>
+        </p>
+        <p class="card-text text-muted">
+          Дата создания: <%= item.create_at.toLocaleDateString() %>
+        </p>
+        <a href="/admin/questions/apply/<%= item.id %>" class="btn btn-primary"
+          >Изменить статус</a
+        >
+        <a href="/admin/questions/delete/<%= item.id %>" class="btn btn-outline"
+          >Удалить</a
+        >
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>

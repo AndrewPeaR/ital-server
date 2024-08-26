@@ -1,0 +1,70 @@
+.news__poster
+    width: 100%
+    object-fit: cover
+
+
+.news-slider
+    position: relative
+    margin-bottom: 100px
+    &::after
+        position: absolute
+        top: 50px
+        right: 81px
+        z-index: 10
+        content: 'Новости'
+        text-transform: uppercase
+        padding: 10px 15px
+        background-color: $semiwhite
+        @include font-styles(28px, 600, normal, 0, $blue)
+    &__slide
+        position: relative
+        .news-slider__info
+            padding: 0 0 0 40px
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            border-bottom: 1px solid $semiwhite
+            .news-slider__line-wrapper
+                border-left: 1px solid $semiwhite
+                padding: 50px 0 100px 40px
+            .news-slider__date
+                margin-bottom: 80px
+                @include font-styles(42px, 700, normal, 0, $semiwhite)
+            .news-slider__title
+                max-width: 800px
+                @include font-styles(42px, 400, 100%, 0, $semiwhite)
+    .news-slider__thumbs-button-prev, .news-slider__thumbs-button-next
+        position: absolute
+        cursor: pointer
+        z-index: 6
+        bottom: 78px
+        width: 32px
+        height: 26px
+        background-size: cover
+        background-image: url(../img/arrow.svg)
+    .news-slider__thumbs-button-prev
+        left: 20px
+    .news-slider__thumbs-button-next
+        transform: rotate(180deg)
+        right: 20px
+
+.news-slider__thumbs
+    width: 100%
+    position: absolute
+    bottom: 23px
+    z-index: 5
+    left: 0
+    padding: 0 80px
+.swiper__news-thumbs
+    .swiper-slide
+        cursor: pointer
+        height: 132px !important
+        
+        &-thumb-active
+            outline: 3px solid $semiwhite
+            outline-offset: -3px
+
+.swiper__news-thumbs img
+    height: 100%
+    object-fit: cover

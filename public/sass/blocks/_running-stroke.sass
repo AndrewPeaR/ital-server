@@ -1,0 +1,33 @@
+.mySwiper-button-prev, .mySwiper-button-next
+    position: absolute
+    display: flex
+    cursor: pointer
+    justify-content: center
+    align-items: center
+    width: 53px
+    height: 53px
+    background-color: $dark
+.mySwiper-button-prev
+    top: 50%
+    transform: translate(0,-50%)
+    left: 0
+
+.mySwiper-button-next
+    top: 50%
+    transform: translate(0,-50%)
+    right: 0
+    img
+        transform: rotate(180deg)
+.my-swiper-wrapper
+    position: relative
+    padding: 60px 80px
+
+.running-stroke
+    margin-bottom: 40px
+.running-stroke .swiper
+    height: 74px
+.running-stroke .swiper-slide
+    img
+        height: 100%
+.running-stroke .swiper-slide
+    text-align: center
