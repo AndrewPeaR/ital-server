@@ -1,0 +1,24 @@
+<% layout('layouts/admin') %>
+
+<div class="container">
+  <h1 class="mb-3">Заявки</h1>
+  <a href="/admin" class="mb-3 btn btn-primary">Все таблицы</a>
+  <div class="row mb-5 pb-5 gy-3">
+    <% for (item of items){ %>
+    <div class="card px-3 rounded-3">
+      <div class="card-body">
+        <h5 class="card-title"><%= item.name %></h5>
+        <% if(item.type === 'text') { %>
+        <p class="card-text"><%= item.value %></p>
+        <% } else if(item.type === 'image'){ %>
+          <img width="300" src="/uploads/about/<%= item.value %>" alt="<%= item.value %>">
+          <p class="card-text"></p>
+        <% } %>
+        <a href="/admin/about/edit/<%= item.slug %>" class="btn btn-primary"
+          >Изменить</a
+        >
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>

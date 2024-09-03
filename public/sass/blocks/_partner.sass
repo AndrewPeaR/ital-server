@@ -6,6 +6,8 @@
     &__info
         display: flex
         justify-content: space-between
+        .partner__certificate
+            max-width: 50%
         .partner__description
             display: flex
             flex-direction: column
@@ -25,6 +27,9 @@
                     padding-top: 5px
                     content: url(../img/file.svg)
                 p:nth-child(1)
+                    @include fast-transition
                     @include font-styles(20px, 400, normal, 0, $dark)
                 p:nth-child(2)
                     @include font-styles(12px, 200, normal, 0, $dark)
+                &:hover p:nth-child(1)
+                    color: $blue

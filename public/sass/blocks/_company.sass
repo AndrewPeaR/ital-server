@@ -22,6 +22,9 @@
         margin-bottom: 20px
     &__link
         @include font-styles(32px, 500, 110%, 0, $dark)
+        @include fast-transition
+        &:hover
+            color: $blue
         &::after
             content: url('../img/link.svg')
             margin-left: 10px
@@ -39,9 +42,13 @@
         margin-bottom: 55px
         @include font-styles(64px, 700, normal, 0, $dark)
     &__text
+        white-space: pre-wrap
         margin-bottom: 45px
         text-align: justify
         @include font-styles(24px, 400, normal, 0, $dark)
+    &__buttons
+        display: flex
+        justify-content: center
     &__button
         display: inline-block
         padding: 30px 60px

@@ -245,9 +245,12 @@
           <img class="marketing__poster" src="./img/it-alliance.png" alt="it-alliance">
         </div>
         <div class="marketing__info">
-          <p>Повседневная практика показывает, что начало повседневной работы по формированию позиции играет важную роль в формировании существующих финансовых и административных условий. А ещё непосредственные участники технического прогресса рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: существующая теория позволяет выполнить важные задания по разработке экономической целесообразности принимаемых решений. Имеется спорная точка зрения, гласящая примерно следующее: ключевые особенности структуры проекта представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Таким образом, высокое качество позиционных исследований играет важную роль в формировании поставленных обществом задач.</p>
+            <% for(item of info) { %>
+              <% if(item.slug === 'mini-description') {%>
+                <p><%= item.value %></p>
+              <% }} %>
           <div class="btn_wrapper">
-            <a class="btn btn_outline" href="about.html">Подробнее</a>
+            <a class="btn btn_outline" href="/about">Подробнее</a>
           </div>
         </div>
       </div>
@@ -259,17 +262,19 @@
       <div class="our-vendors">
         <h2 class="section-title our-vendors__title">Наши вендоры</h2>
         <div class="our-vendors__companies">
+          <% vendors.forEach(function(item){  %>
           <div class="our-vendors__company">
-            <a href="company.html">
+            <a href="/vendors/<%= item.slug %>">
               <div class="our-vendors__company-image">
-                <img src="./img/suppliers1.png" alt="company-image">
+                <img src="/uploads/vendors/<%= item.imageUrl %>" alt="company-image">
               </div>
               <div class="our-vendors__company-button">
                 <p>Подробнее</p>
               </div>
             </a>
           </div>
-          <div class="our-vendors__company">
+          <% }) %>
+          <!-- <div class="our-vendors__company">
             <a href="#">
               <div class="our-vendors__company-image">
                 <img src="./img/suppliers1.png" alt="company-image">
@@ -288,13 +293,13 @@
                 <p>Подробнее</p>
               </div>
             </a>
-          </div>
+          </div> -->
         </div>
         <p class="our-vendors__info">
-          Повседневная практика показывает, что начало повседневной работы по формированию позиции играет важную роль в формировании существующих финансовых и административных условий. А ещё непосредственные участники технического 
+          Мы стремимся  предлагать своим клиентам  лучшие решения и технологии, поэтому  мы  сотрудничаем  с ведущими  вендорами  в своей области. Наши партнеры - это  компании, которые  делят наши  ценности и  стремятся  к  безупречному качеству.
         </p>
         <div class="btn_wrapper">
-          <a class="btn btn_outline" href="vendors.html">Все вендоры</a>
+          <a class="btn btn_outline" href="/vendors">Все вендоры</a>
         </div>
       </div>
     </div>

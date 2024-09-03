@@ -1,7 +1,8 @@
 <% layout('layouts/admin') %>
 
 <div class="container">
-  <h1 class="mb-5">Заявки</h1>
+  <h1 class="mb-3">Заявки</h1>
+  <a href="/admin" class="mb-3 btn btn-primary">Все таблицы</a>
   <% if(questions.length === 0) {%>
   <p>Сейчас нет новых заявок</p>
   <% } else { %>

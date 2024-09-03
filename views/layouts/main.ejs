@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.css"
       rel="stylesheet"
@@ -12,7 +12,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <div class="uptop"><img src="./img/up.svg" alt="up"></div>
+    <div class="uptop"><img src="/img/up.svg" alt="up"></div>
     <header>
       <div class="wrapper">
         <div class="header">
@@ -20,11 +20,11 @@
             <div class="header__burger burger">
               <span></span>
             </div>
-            <a href="#">
+            <a href="#backform">
               <div class="header__get-partner btn">Стать партнером</div>
             </a>
           </div>
-          <a href="#">
+          <a href="/contacts">
             <div class="btn header__contacts">Контакты</div>
           </a>
         </div>
@@ -36,11 +36,11 @@
           </div>
           <div class="nav__wrapper">
             <ul class="nav__items">
-              <li class="nav__item"><a href="index.html">Главная</a></li>
-              <li class="nav__item"><a href="about.html">О компании</a></li>
-              <li class="nav__item"><a href="vendors.html">Наши вендоры</a></li>
-              <li class="nav__item"><a href="contacts.html">Контакты</a></li>
-              <li class="nav__item"><a href="#">Поддержка</a></li>
+              <li class="nav__item"><a href="/">Главная</a></li>
+              <li class="nav__item"><a href="/about">О компании</a></li>
+              <li class="nav__item"><a href="/vendors">Наши вендоры</a></li>
+              <li class="nav__item"><a href="/contacts">Контакты</a></li>
+              <!-- <li class="nav__item"><a href="#">Поддержка</a></li> -->
             </ul>
             <div class="nav__address">
               <a href="tel:89088967788" class="nav__phone"
@@ -49,22 +49,22 @@
               <a href="#" class="nav__map">г. Москва, ул. Первого Мая, д. 67</a>
             </div>
           </div>
-          <a href="#"><img class="nav__logo" src="./img/logo.png" alt="logo"></a>
+          <a href="/about"><img class="nav__logo" src="/img/logo.png" alt="logo"></a>
         </div>
       </nav>
     </header>
 
     <%- body %>
 
-    <section class="bg-wrapper">
+    <section class="bg-wrapper" id="backform">
         <div class="asking-bg"></div>
         <div class="wrapper">
           <div class="asking">
             <div class="asking__info">
               <h2 class="asking__title">Остались вопросы?</h2>
               <div class="asking__buttons">
-                <a href="#" class="btn btn_white">Контакты</a>
-                <a href="#" class="btn btn_white">FAQ</a>
+                <a href="/contacts" class="btn btn_white">Контакты</a>
+                <!-- <a href="#" class="btn btn_white">FAQ</a> -->
               </div>
             </div>
             <div class="asking__form">
@@ -105,13 +105,13 @@
             <div class="footer__address">
               <div class="footer__company">
                 <div class="footer__logo">
-                  <a href="#"><img src="./img/logo-white.png" alt="logo"></a>
+                  <a href="/"><img src="/img/logo-white.png" alt="logo"></a>
                 </div>
                 <div class="footer__social">
-                  <!-- <a href="#"><img src="./img/whatsapp.svg" alt="whatsapp"></a>
-                  <a href="#"><img src="./img/messanger.svg" alt="messanger"></a>
-                  <a href="#"><img src="./img/YouTube.svg" alt="YouTube"></a> -->
-                  <a href="#"><img src="./img/email.svg" alt="email"></a>
+                  <!-- <a href="#"><img src="/img/whatsapp.svg" alt="whatsapp"></a>
+                  <a href="#"><img src="/img/messanger.svg" alt="messanger"></a>
+                  <a href="#"><img src="/img/YouTube.svg" alt="YouTube"></a> -->
+                  <a href="#"><img src="/img/email.svg" alt="email"></a>
                 </div>
               </div>
               <ul class="footer__contacts">
@@ -124,25 +124,25 @@
               </div>
             </div>
             <div class="footer__nav">
-              <a href="#" class="footer__nav-title">О компании</a>
+              <a href="/about" class="footer__nav-title">О компании</a>
               <ul class="footer__anchors">
-                <li><a href="#" class="footer__anchor">Описание</a></li>
-                <li><a href="#" class="footer__anchor">Фото офиса</a></li>
+                <li><a href="/about#about__title" class="footer__anchor">Описание</a></li>
+                <li><a href="/about#about__image" class="footer__anchor">Фото офиса</a></li>
               </ul>
             </div>
             <div class="footer__nav">
-              <a href="#" class="footer__nav-title">Вендоры</a>
+              <a href="/vendors" class="footer__nav-title">Вендоры</a>
               <ul class="footer__anchors">
-                <li><a href="#" class="footer__anchor">Наши вендоры</a></li>
-                <li><a href="#" class="footer__anchor">Авторизованный<br/>партнер</a></li>
+                <li><a href="/vendors#our-vendors" class="footer__anchor">Наши вендоры</a></li>
+                <li><a href="/vendors#partner__title" class="footer__anchor">Авторизованный<br/>партнер</a></li>
               </ul>
             </div>
             <div class="footer__nav">
-              <a href="#" class="footer__nav-title">Контакты</a>
+              <a href="/contacts" class="footer__nav-title">Контакты</a>
               <ul class="footer__anchors">
-                <li><a href="#" class="footer__anchor">Карта</a></li>
-                <li><a href="#" class="footer__anchor">Адрес</a></li>
-                <li><a href="#" class="footer__anchor">График работы</a></li>
+                <li><a href="/contacts#mainmap" class="footer__anchor">Карта</a></li>
+                <li><a href="/contacts#contacts__address" class="footer__anchor">Адрес</a></li>
+                <li><a href="/contacts#contacts__address" class="footer__anchor">График работы</a></li>
               </ul>
             </div>
             <div class="footer__nav">
@@ -169,9 +169,9 @@
           }
         })
       </script>
-      <script src="./js/animationObserver.js"></script>
-      <script src="js/header.js"></script>
+      <script src="/js/animationObserver.js"></script>
+      <script src="/js/header.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.js"></script>
-      <script src="js/swiper.js"></script>
+      <script src="/js/swiper.js"></script>
 </body>
 </html>

@@ -7,8 +7,30 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Заявки</h5>
-          <p class="card-text">Общее количество заявок: 5</p>
+          <p class="card-text">Общее количество заявок: <%= countQuestions %></p>
           <a href="/admin/questions" class="btn btn-primary">Открыть</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Вендоры</h5>
+          <p class="card-text">Общее количество вендоров: <%= vendors %></p>
+          <a href="/admin/vendors" class="btn btn-primary">Открыть</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Контент сайта</h5>
+          <p class="card-text">В этом блоке можно редактировать различный контент на сайте</p>
+          <a href="/admin/about" class="btn btn-primary">Открыть</a>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const passport = require('passport')
 const cors = require('cors')
 const router = require('./routes/routes')
 const path = require('path')
-
+const multer = require('multer')
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -19,7 +19,7 @@ app.set('view-engine', 'ejs')
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 const SqliteStore = sqliteStoreFactory(session)
 app.use(session({
@@ -44,12 +44,31 @@ require('./config/passport-config')
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get('/', (req, res) => {
-    if(req.user?.email)
-        res.render('pages/index.ejs', {user: req.user.email})
-    else
-        res.render('pages/index.ejs', {user: 'Авторизуйтесь'})
+const storageConfig = multer.diskStorage({
+    destination: (req, file, cb) => {
+        let destinationPath = 'public/uploads/'
+        if(file.fieldname === 'vendorsImageUrl'){
+            destinationPath += 'vendors'
+        } else if(file.fieldname === 'newsImageUrl') {
+            destinationPath += 'news' 
+        } else if(file.fieldname === 'aboutImageUrl') {
+            destinationPath += 'about'
+        }
+        cb(null, destinationPath)
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname)
+    }
 })
+app.use(multer({storage: storageConfig}).any())
+
+
+// app.get('/', (req, res) => {
+//     if(req.user?.email)
+//         res.render('pages/index.ejs', {user: req.user.email})
+//     else
+//         res.render('pages/index.ejs', {user: 'Авторизуйтесь'})
+// })
 
 app.use('/', router)
 

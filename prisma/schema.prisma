@@ -45,3 +45,32 @@ model Questions {
   create_at   DateTime @default(now())
   updated_at  DateTime @updatedAt
 }
+
+model FAQ {
+  id       Int    @id @default(autoincrement())
+  question String
+  answer   String
+}
+
+model Company {
+  id           Int    @id @default(autoincrement())
+  name         String @unique
+  description  String
+  imageUrl     String
+  officialSite String
+  CompanyTag   String
+  slug         String @unique
+}
+
+model About {
+  id               Int    @id @default(autoincrement())
+  name  String
+  slug String @unique
+  value String
+  type String?
+  // descriptionOne   String
+  // descriptionTwo   String
+  // imageUrl         String
+  // bigImageUrl      String
+  // whereOfficeImage String
+}

@@ -1,0 +1,91 @@
+<% layout('layouts/main') %>
+
+<section>
+    <div class="wrapper">
+        <div class="contacts">
+            <h2 class="section-title contacts-title">Есть вопросы?<br />Свяжитесь с нами!</h2>
+            <div class="contacts__map">
+                <div class="contacts__toggle" id="mainmap">
+                    <input id="toggle__checkbox" type="checkbox" class="toggle__checkbox">
+                    <label for="toggle__checkbox" class="toggle">
+                        <div class="toggle__content">
+                            <p class="toggle__text">Адрес</p>
+                            <p class="toggle__text">Фото офиса</p>
+                        </div>
+                        <div class="toggle__switch">&nbsp;</div>
+                    </label>
+                    <div class="toggle__blocks">
+                        <div class="toggle__map">
+                            <div id="map" style="width: 100%; height: 100%"></div>
+                        </div>
+                        <div class="toggle__photos">
+                            <div class="photos__wrapper">
+                                <div>
+                                    <img src="./img/news-image.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="./img/news-image.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="./img/news-image.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="./img/news-image.png" alt="">
+                                </div>
+                                <div>
+                                    <img src="./img/news-image.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts__address" id="contacts__address">
+                <img src="./img/office.png" alt="office">
+                <div class="contacts__info">
+                    <div class="info">
+                        <h3 class="info__title">Головной офис</h3>
+                        <p class="info__text">117133, Москва, 21-й км., Киевское шоссе 3, строение 1, Бизнес-парк G10</p>
+                        <p class="info__text"><a href="#">8 (800) 551-75-75</a><br />время работы: 9:00 - 19:00</p>
+                        <p class="info__text">email: <a href="#">support@it-alliance-company.ru</a></p>
+                    </div>
+                    <a class="info__button" href="#">Обратная связь</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://api-maps.yandex.ru/v3/?apikey=a8a171f0-1d76-426b-9c1f-c6c58d7df875&lang=ru_RU"></script>
+    <script>
+      initMap();
+
+      async function initMap() {
+        // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+        await ymaps3.ready;
+
+        const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+
+        const map = new YMap(document.getElementById("map"), {
+          location: {
+            center: [37.453583, 55.633373],
+            zoom: 16.55,
+          },
+        });
+
+        const { YMapDefaultMarker } = await ymaps3.import(
+          "@yandex/ymaps3-markers@0.0.1"
+        );
+
+        let marker = new YMapDefaultMarker({
+          coordinates: [37.453583, 55.633373],
+          draggable: false,
+          title: "Адрес: 117133, г.Москва",
+          subtitle: "Киевское шоссе 3, стр. 1, G10",
+        });
+
+        map.addChild(new YMapDefaultSchemeLayer());
+        map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
+        map.addChild(marker);
+      }
+    </script>
