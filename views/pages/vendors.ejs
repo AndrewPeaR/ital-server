@@ -9,11 +9,12 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
+               <% for (vendor of vendors) { %>
               <div class="swiper-slide">
                 <div class="our-vendors__company" id="our-vendors">
-                  <a href="#">
+                  <a href="/vendors/<%= vendor.slug %>">
                     <div class="our-vendors__company-image">
-                      <img src="./img/suppliers1.png" alt="company-image" />
+                      <img src="/uploads/vendors/<%= vendor.imageUrl %>" alt="company-image" />
                     </div>
                     <div class="our-vendors__company-button">
                       <p>Подробнее</p>
@@ -21,7 +22,8 @@
                   </a>
                 </div>
               </div>
-              <div class="swiper-slide">
+              <% } %>
+              <!-- <div class="swiper-slide">
                 <div class="our-vendors__company">
                   <a href="#">
                     <div class="our-vendors__company-image">
@@ -152,7 +154,7 @@
                     </div>
                   </a>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="swiper__vendors-scrollbar">
               <div class="swiper__vendors-scrollbar__drag"></div>

@@ -1,0 +1,17 @@
+<% layout('layouts/admin') %>
+
+<div class="container mb-5 pb-5">
+  <h1 class="mb-3">Создать заказчика</h1>
+  <a href="/admin/photos" class="mb-2 btn btn-primary">Все заказчики</a>
+  <div class="row mb-4">
+    <div class="col">
+      <form class="w-50 mx-auto" method="POST" action="/admin/photos/create" enctype="multipart/form-data">
+        <div class="form-group mb-4">
+          <label for="photosImageUrl" class="form-label">Загрузите изображение</label>
+          <input class="form-control" type="file" id="photosImageUrl" name="photosImageUrl">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить</button>
+      </form>
+    </div>
+  </div>
+</div>

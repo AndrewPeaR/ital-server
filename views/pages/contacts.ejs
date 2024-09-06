@@ -20,36 +20,33 @@
                         </div>
                         <div class="toggle__photos">
                             <div class="photos__wrapper">
+                                <% for (photo of photos.slice(0, 5)) { %>
                                 <div>
-                                    <img src="./img/news-image.png" alt="">
+                                    <a href="./uploads/photos/<%= photo.imageUrl %>" class="glightbox3" data-gallery="gallery1">
+                                        <img src="/uploads/photos/<%= photo.imageUrl %>" alt="<%= photo.imageUrl %>">
+                                    </a>
                                 </div>
-                                <div>
-                                    <img src="./img/news-image.png" alt="">
-                                </div>
-                                <div>
-                                    <img src="./img/news-image.png" alt="">
-                                </div>
-                                <div>
-                                    <img src="./img/news-image.png" alt="">
-                                </div>
-                                <div>
-                                    <img src="./img/news-image.png" alt="">
-                                </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="contacts__address" id="contacts__address">
-                <img src="./img/office.png" alt="office">
+                <img src="/uploads/about/<%= office.value %>" alt="office">
                 <div class="contacts__info">
                     <div class="info">
                         <h3 class="info__title">Головной офис</h3>
                         <p class="info__text">117133, Москва, 21-й км., Киевское шоссе 3, строение 1, Бизнес-парк G10</p>
                         <p class="info__text"><a href="#">8 (800) 551-75-75</a><br />время работы: 9:00 - 19:00</p>
-                        <p class="info__text">email: <a href="#">support@it-alliance-company.ru</a></p>
+                        <p class="info__text">email: <a href="#">info@it-alliance-company.ru</a></p>
                     </div>
-                    <a class="info__button" href="#">Обратная связь</a>
+                    <div class="info">
+                        <h3 class="info__title">Техподдержка</h3>
+                        <!-- <p class="info__text"><a href="#">Подать заявку</a></p> -->
+                        <p class="info__text info__tech-support">email: <a href="#">support@it-alliance-company.ru</a></p>
+                        <a class="info__button" href="#">Написать</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,4 +85,11 @@
         map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
         map.addChild(marker);
       }
+    </script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox3',
+            touchNavigation: true,
+            loop: true,
+        });
     </script>

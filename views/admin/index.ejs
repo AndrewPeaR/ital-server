@@ -2,40 +2,71 @@
 
 <div class="container">
   <h1 class="mb-5">Таблицы</h1>
-  <div class="row mb-4">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Заявки</h5>
-          <p class="card-text">Общее количество заявок: <%= countQuestions %></p>
-          <a href="/admin/questions" class="btn btn-primary">Открыть</a>
+  <div class="col mb-5 pb-5">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Заявки</h5>
+            <p class="card-text">
+              Общее количество заявок: <%= countQuestions %>
+            </p>
+            <a href="/admin/questions" class="btn btn-primary">Открыть</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row mb-4">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Вендоры</h5>
-          <p class="card-text">Общее количество вендоров: <%= vendors %></p>
-          <a href="/admin/vendors" class="btn btn-primary">Открыть</a>
+    <div class="row mb-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Вендоры</h5>
+            <p class="card-text">Общее количество вендоров: <%= vendors %></p>
+            <a href="/admin/vendors" class="btn btn-primary">Открыть</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row mb-4">
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Контент сайта</h5>
-          <p class="card-text">В этом блоке можно редактировать различный контент на сайте</p>
-          <a href="/admin/about" class="btn btn-primary">Открыть</a>
+    <div class="row mb-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Заказчики</h5>
+            <p class="card-text">
+              Общее количество заказчиков: <%= customers %>
+            </p>
+            <a href="/admin/customers" class="btn btn-primary">Открыть</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- <div class="row mb-4">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Фото офиса</h5>
+            <p class="card-text">
+              Общее количество фотографий: <%= photos %>
+            </p>
+            <a href="/admin/photos" class="btn btn-primary">Открыть</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Контент сайта</h5>
+            <p class="card-text">
+              В этом блоке можно редактировать различный контент на сайте
+            </p>
+            <a href="/admin/about" class="btn btn-primary">Открыть</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row mb-4">
     <div class="col">
       <div class="card">
         <div class="card-body">
@@ -46,4 +77,5 @@
       </div>
     </div>
   </div> -->
+  </div>
 </div>

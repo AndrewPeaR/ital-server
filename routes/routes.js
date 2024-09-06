@@ -14,15 +14,28 @@ router.get('/', async (req, res) => {
     const vendors = await prisma.Company.findMany({
         take: 3
     })
+    const customers = await prisma.Customers.findMany()
     const info = await prisma.about.findMany()
-    res.render('pages/index.ejs', {vendors: vendors, info: info})
+    res.render('pages/index.ejs', {vendors: vendors, info: info, customers: customers})
 })
 router.get('/about', async (req, res) => {
     const info = await prisma.about.findMany()
     res.render('pages/about.ejs', {info: info})
 })
-router.get('/vendors', (req, res) => res.render('pages/vendors.ejs'))
-router.get('/contacts', (req, res) => res.render('pages/contacts.ejs'))
+router.get('/vendors', async (req, res) => {
+    const vendors = await prisma.Company.findMany()
+    
+    res.render('pages/vendors.ejs', {vendors: vendors})
+})
+router.get('/contacts', async (req, res) => {
+    const photos = await prisma.OfficePhoto.findMany()
+    const office = await prisma.About.findFirst({
+        where: {
+            slug: 'contacts-photo'
+        }
+    })
+    res.render('pages/contacts.ejs', {photos: photos, office: office})
+})
 router.get('/vendors/:slug', async (req, res) => {
     const vendor = await prisma.Company.findUnique({
         where: {
@@ -31,6 +44,7 @@ router.get('/vendors/:slug', async (req, res) => {
     })
     vendor.CompanyTag = vendor.CompanyTag.split(', ')
     res.render('pages/company.ejs', {user: req.user, vendor: vendor})
+    // console.log(array);
 })
 
 router.get('/register', (req, res) => res.render('admin/register.ejs'))

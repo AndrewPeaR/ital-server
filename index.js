@@ -53,6 +53,10 @@ const storageConfig = multer.diskStorage({
             destinationPath += 'news' 
         } else if(file.fieldname === 'aboutImageUrl') {
             destinationPath += 'about'
+        } else if(file.fieldname === 'customersImageUrl'){
+            destinationPath += 'customers'
+        } else if(file.fieldname === 'photosImageUrl') {
+            destinationPath += 'photos'
         }
         cb(null, destinationPath)
     },

@@ -439,8 +439,10 @@ html, body {
   height: 74px;
 }
 
-.running-stroke .swiper-slide img {
+.running-stroke .swiper-slide a {
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .running-stroke .swiper-slide {
@@ -777,6 +779,9 @@ html, body {
   grid-template-columns: 1fr 1.15fr;
   gap: 50px 75px;
 }
+.about__image {
+  filter: grayscale(100%);
+}
 .about__text {
   text-align: justify;
   font-size: 20px;
@@ -791,6 +796,7 @@ html, body {
   text-align: center;
 }
 .about-mainpic img {
+  filter: grayscale(100%);
   width: 100%;
 }
 
@@ -1011,8 +1017,10 @@ html, body {
 }
 .contacts .toggle__blocks .toggle__photos .photos__wrapper div img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   object-position: center center;
+  filter: grayscale(100%);
   transition: all 0.2s ease-out;
 }
 .contacts .toggle__blocks .toggle__photos .photos__wrapper div:first-child {
@@ -1043,14 +1051,22 @@ html, body {
   justify-content: space-between;
   gap: 73px;
 }
+.contacts__address img {
+  object-fit: cover;
+  max-width: 580px;
+  filter: grayscale(100%);
+}
 .contacts__address .contacts__info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
 }
+.contacts__address .contacts__info .info {
+  padding-bottom: 18px;
+}
 .contacts__address .contacts__info .info__title {
-  margin-bottom: 33px;
+  margin-bottom: 23px;
   text-transform: uppercase;
   font-size: 36px;
   font-weight: 500;
@@ -1059,7 +1075,7 @@ html, body {
   color: #313131;
 }
 .contacts__address .contacts__info .info__text {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-size: 18px;
   font-weight: 500;
   line-height: 110%;
@@ -1070,6 +1086,7 @@ html, body {
   color: #313131;
 }
 .contacts__address .contacts__info .info__button {
+  margin-top: 15px;
   padding: 18px 65px;
   background-color: #313131;
   font-size: 18px;
@@ -1077,6 +1094,9 @@ html, body {
   line-height: 110%;
   letter-spacing: 0;
   color: #F7F7F7;
+}
+.contacts__address .contacts__info .info__tech-support {
+  margin-bottom: 60px;
 }
 .contacts .ymaps3x0--main-engine-container canvas {
   filter: grayscale(100%);

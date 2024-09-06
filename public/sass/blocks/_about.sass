@@ -3,6 +3,8 @@
     display: grid
     grid-template-columns: 1fr 1.15fr
     gap: 50px 75px
+    &__image
+        filter: grayscale(100%)
     &__text
         text-align: justify
         @include font-styles(20px, 400, normal, 0, $dark)
@@ -11,4 +13,5 @@
     margin-bottom: 80px
     text-align: center
     img
+        filter: grayscale(100%)
         width: 100%

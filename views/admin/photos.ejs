@@ -1,0 +1,26 @@
+<% layout('layouts/admin') %>
+
+<div class="container">
+  <h1 class="mb-3">Фотографии</h1>
+  <a href="/admin" class="mb-3 btn btn-primary">Все таблицы</a>
+  <a href="/admin/photos/create" class="btn btn-outline-primary mb-3">Добавить фото</a>
+  <% if(photos.length === 0) {%>
+  <p>Сейчас нет фотографий</p>
+  <% } else { %>
+  <div class="row mb-5 pb-5 gy-3">
+    <% photos.forEach(function(item){ %>
+    <div class="card px-3 rounded-3">
+      <div class="card-body">
+        <h5 class="card-title">Фото #<%= item.id %></h5>
+        <p class="card-text">
+          <img width="300" src="/uploads/photos/<%= item.imageUrl %>" alt="<%= item.imageUrl %>">
+        </p>
+        <a href="/admin/photos/delete/<%= item.id %>" class="btn btn-outline-primary"
+          >Удалить</a
+        >
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>

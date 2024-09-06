@@ -4,7 +4,7 @@
     <div class="wrapper">
       <div class="main">
         <h1 class="main__title">
-          Дистрибуция проектных решений и ритейл-продуктов
+          Надежная дистрибуция IT-оборудования для вашего бизнеса
         </h1>
         <p class="main__description">Компания современных бизнес-решений</p>
       </div>
@@ -21,24 +21,16 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
+             <% for (customer of customers) { %>
             <div class="swiper-slide">
+              <a target="_blank" href="<%= customer.officialSite %>">
+                <img src="/uploads/customers/<%= customer.imageUrl %>" alt="<%= customer.imageUrl %>" />
+              </a>
+            </div>
+            <% } %>
+            <!-- <div class="swiper-slide">
               <img src="./img/suppliers1.png" alt="suppliers1" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/suppliers2.png" alt="suppliers2" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/suppliers3.png" alt="suppliers3" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/suppliers4.png" alt="suppliers4" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/suppliers5.png" alt="suppliers5" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./img/suppliers6.png" alt="suppliers6" />
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="mySwiper-button-next">
@@ -48,9 +40,8 @@
     </div>
   </div>
 
-  <section class="news-slider__animate">
+  <!-- <section class="news-slider__animate">
     <div class="wrapper">
-      <!-- <h2 class="section-title">Последние новости</h2> -->
       <div class="news-slider">
         <div class="swiper swiper__news">
           <div class="swiper-wrapper">
@@ -235,7 +226,7 @@
         <div class="news-slider__thumbs-button-next"></div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section>
     <div class="wrapper">

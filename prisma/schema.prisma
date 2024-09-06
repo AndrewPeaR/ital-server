@@ -63,14 +63,21 @@ model Company {
 }
 
 model About {
-  id               Int    @id @default(autoincrement())
+  id    Int     @id @default(autoincrement())
   name  String
-  slug String @unique
+  slug  String  @unique
   value String
-  type String?
-  // descriptionOne   String
-  // descriptionTwo   String
-  // imageUrl         String
-  // bigImageUrl      String
-  // whereOfficeImage String
+  type  String?
+}
+
+model Customers {
+  id           Int    @id @default(autoincrement())
+  name         String
+  imageUrl     String
+  officialSite String
+}
+
+model OfficePhoto {
+  id       Int    @id @default(autoincrement())
+  imageUrl String
 }

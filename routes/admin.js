@@ -11,10 +11,14 @@ const prisma = new PrismaClient();
 router.get("/", async (req, res) => {
   const countQuestions = await prisma.Questions.findMany();
   const vendors = await prisma.Company.findMany();
+  const customers = await prisma.Customers.findMany()
+  const photos = await prisma.OfficePhoto.findMany()
   res.render("admin.ejs", {
     user: req.user,
     countQuestions: countQuestions.length,
     vendors: vendors.length,
+    customers: customers.length,
+    photos: photos.length
   });
 });
 
@@ -168,6 +172,82 @@ router.post('/about/edit/:slug', async (req, res) => {
   }
   res.redirect(`/admin/about/edit/${item.slug}`)
 })
+
+router.get('/customers', async (req, res) => {
+  const customers = await prisma.Customers.findMany()
+  res.render('admin/customers.ejs', {user: req.user, customers: customers})
+})
+router.get('/customers/create', (req, res) => {
+  res.render('admin/createCustomers.ejs', {user: req.user})
+})
+router.post('/customers/create', async (req, res) => {
+  const customer = await prisma.Customers.create({
+    data: {
+      name: req.body.name,
+      officialSite: req.body.officialSite,
+      imageUrl: req.files[0].filename
+    }
+  })
+  res.redirect(`/admin/customers/edit/${customer.id}`)
+})
+router.get('/customers/edit/:id', async (req, res) => {
+  const customer = await prisma.Customers.findUnique({
+    where: {
+      id: Number(req.params.id)
+    }
+  })
+  res.render('admin/updateCustomers.ejs', {user: req.user, customer: customer})
+})
+router.post('/customers/edit/:id', async (req, res) => {
+  if(req.files[0]){
+    const customer = await prisma.Customers.update({
+      where: {
+        id: Number(req.params.id)
+      },
+      data: {
+        name: req.body.name,
+        officialSite: req.body.officialSite,
+        imageUrl: req.files[0].filename
+      }
+    })
+  } else {
+    const customer = await prisma.Customers.update({
+      where: {
+        id: Number(req.params.id)
+      },
+      data: {
+        name: req.body.name,
+        officialSite: req.body.officialSite,
+      }
+    })
+  }
+  res.redirect(`/admin/customers/edit/${req.params.id}`)
+})
+
+router.get('/photos', async (req, res) => {
+  const photos = await prisma.OfficePhoto.findMany()
+  res.render('admin/photos.ejs', {user: req.user, photos: photos})
+})
+router.get('/photos/create', (req, res) => {
+  res.render('admin/createPhoto.ejs', {user: req.user})
+})
+router.post('/photos/create', async (req, res) => {
+  const photo = await prisma.OfficePhoto.create({
+    data: {
+      imageUrl: req.files[0].filename
+    }
+  })
+  res.redirect('/admin/photos')
+})
+router.get('/photos/delete/:id', async (req, res) => {
+  const photo = await prisma.OfficePhoto.delete({
+    where: {
+      id: Number(req.params.id)
+    }
+  })
+  res.redirect('/admin/photos')
+})
+
 
 router.post("/create", PostsController.createPost);
 

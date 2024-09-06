@@ -71,8 +71,10 @@
                                 height: 120%
                         img
                             height: 100%
+                            width: 100%
                             object-fit: cover
                             object-position: center center
+                            filter: grayscale(100%)
                             @include fast-transition
                                 
                         &:first-child
@@ -97,25 +99,33 @@
         display: flex
         justify-content: space-between
         gap: 73px
+        img
+            object-fit: cover
+            max-width: 580px
+            filter: grayscale(100%)
         .contacts__info
             display: flex
             flex-direction: column
             justify-content: space-between
             align-items: flex-start
             .info
+                padding-bottom: 18px
                 &__title
-                    margin-bottom: 33px
+                    margin-bottom: 23px
                     text-transform: uppercase
                     @include font-styles(36px, 500, 110%, 0, $dark)
                 &__text
-                    margin-bottom: 30px
+                    margin-bottom: 15px
                     @include font-styles(18px, 500, 110%, 0, $dark)
                     a
                         color: $dark
                 &__button
+                    margin-top: 15px
                     padding: 18px 65px
                     background-color: $dark
                     @include font-styles(18px, 500, 110%, 0, $semiwhite)
+                &__tech-support
+                    margin-bottom: 60px
     .ymaps3x0--main-engine-container canvas
         filter: grayscale(100%)           
                 

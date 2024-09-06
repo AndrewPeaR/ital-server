@@ -1,0 +1,30 @@
+<% layout('layouts/admin') %>
+
+<div class="container">
+  <h1 class="mb-3">Заказчики</h1>
+  <a href="/admin" class="mb-3 btn btn-primary">Все таблицы</a>
+  <a href="/admin/customers/create" class="btn btn-outline-primary mb-3">Создать заказчика</a>
+  <% if(customers.length === 0) {%>
+  <p>Сейчас нет вендоров</p>
+  <% } else { %>
+  <div class="row mb-5 pb-5 gy-3">
+    <% customers.forEach(function(item){ %>
+    <div class="card px-3 rounded-3">
+      <div class="card-body">
+        <h5 class="card-title">Заказчик: <%= item.name %></h5>
+        <p class="card-text text-muted"><a href="<%= item.officialSite %>" target="_blank"><%= item.officialSite %></a></p>
+        <p class="card-text">
+          <img width="300" src="/uploads/customers/<%= item.imageUrl %>" alt="<%= item.imageUrl %>">
+        </p>
+        <a href="/admin/customers/edit/<%= item.id %>" class="btn btn-primary"
+          >Редактировать</a
+        >
+        <a href="/admin/customers/delete/<%= item.id %>" class="btn btn-outline"
+          >Удалить</a
+        >
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <% } %>
+</div>

@@ -8,11 +8,67 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.css"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
     <title>IT Alliance</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <meta name="description" content="Центр развития 'Золотой ключик' для детей дошкольного возраста в городе Сургут. Доверьте заботу о своём малыше нам! А мы с любовью и заботой откроем перед ним мир знаний и возможностей! Развиваем потенциал детей уже более 20 лет! У нас каждый ребенок находит свое место, раскрывает свои таланты и развивает навыки для успешного старта в жизни.">
+    <meta name="keywords" content="Центр развития, детский сад, детский садик, дети, дошкольный возраст, образовательные программы, дет сад, Сургут">
+    <!-- <meta property="og:type" content="website"> -->
+    <!-- <meta property="og:url" content="https://goldenkey86.ru/"> -->
+    <!-- <meta property="og:title" content="Дистрибуция IT-Оборудования">
+    <meta property="og:description" content="Центр развития 'Золотой ключик' для детей дошкольного возраста в городе Сургут. Доверьте заботу о своём малыше нам! А мы с любовью и заботой откроем перед ним мир знаний и возможностей! Развиваем потенциал детей уже более 20 лет! У нас каждый ребенок находит свое место, раскрывает свои таланты и развивает навыки для успешного старта в жизни.">
+    <meta property="og:image" content="https://goldenkey86.ru/img/advantages1.png">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+
+      ym(98255452, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/98255452"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
   </head>
   <body>
-    <div class="uptop"><img src="/img/up.svg" alt="up"></div>
+    <div class="uptop"><img src="/img/up.svg" alt="up" /></div>
     <header>
       <div class="wrapper">
         <div class="header">
@@ -49,7 +105,9 @@
               <a href="#" class="nav__map">г. Москва, ул. Первого Мая, д. 67</a>
             </div>
           </div>
-          <a href="/about"><img class="nav__logo" src="/img/logo.png" alt="logo"></a>
+          <a href="/about"
+            ><img class="nav__logo" src="/img/logo.png" alt="logo"
+          /></a>
         </div>
       </nav>
     </header>
@@ -57,121 +115,198 @@
     <%- body %>
 
     <section class="bg-wrapper" id="backform">
-        <div class="asking-bg"></div>
-        <div class="wrapper">
-          <div class="asking">
-            <div class="asking__info">
-              <h2 class="asking__title">Остались вопросы?</h2>
-              <div class="asking__buttons">
-                <a href="/contacts" class="btn btn_white">Контакты</a>
-                <!-- <a href="#" class="btn btn_white">FAQ</a> -->
-              </div>
-            </div>
-            <div class="asking__form">
-              <form class="form" id="asking__form" action="/create" method="POST">
-                <div class="form__field">
-                  <label for="name" class="form__label">Имя</label>
-                  <input type="text" placeholder="Ваше имя" id="name" name="name" class="form__input" required>
-                </div>
-                <div class="form__field">
-                  <label for="phone" class="form__label">Телефон</label>
-                  <input type="text" placeholder="Ваш телефон" id="phone" name="phone" class="form__input" required>
-                </div>
-                <div class="form__field">
-                  <label for="email" class="form__label">Почта</label>
-                  <input type="text" placeholder="Ваша почта" id="email" name="email" class="form__input" required>
-                </div>
-                <div class="form__field">
-                  <label for="message" class="form__label">Сообщение</label>
-                  <textarea rows="3" type="text" placeholder="Ваше сообщение" id="message" name="message" class="form__input" required></textarea>
-                </div>
-                <div class="form__field form__checkbox">
-                  <input class="form__check" id="checkbox" name="checkbox" type="checkbox" required>
-                  <label class="form__label" for="checkbox">Я согласен с условиями политики конфинденциальности.</label>
-                </div>
-                <div class="form__controls">
-                  <div class="g-recaptcha" data-sitekey="6Lc_ei0qAAAAADUhAJTHI_6_pwBitbTt0tap0O6e"></div>
-                  <button type="submit" class="btn">Отправить</button>
-                </div>
-              </form>
+      <div class="asking-bg"></div>
+      <div class="wrapper">
+        <div class="asking">
+          <div class="asking__info">
+            <h2 class="asking__title">Остались вопросы?</h2>
+            <div class="asking__buttons">
+              <a href="/contacts" class="btn btn_white">Контакты</a>
+              <!-- <a href="#" class="btn btn_white">FAQ</a> -->
             </div>
           </div>
+          <div class="asking__form">
+            <form class="form" id="asking__form" action="/create" method="POST">
+              <div class="form__field">
+                <label for="name" class="form__label">Имя</label>
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  id="name"
+                  name="name"
+                  class="form__input"
+                  required
+                />
+              </div>
+              <div class="form__field">
+                <label for="phone" class="form__label">Телефон</label>
+                <input
+                  type="text"
+                  placeholder="Ваш телефон"
+                  id="phone"
+                  name="phone"
+                  class="form__input"
+                  required
+                />
+              </div>
+              <div class="form__field">
+                <label for="email" class="form__label">Почта</label>
+                <input
+                  type="text"
+                  placeholder="Ваша почта"
+                  id="email"
+                  name="email"
+                  class="form__input"
+                  required
+                />
+              </div>
+              <div class="form__field">
+                <label for="message" class="form__label">Сообщение</label>
+                <textarea
+                  rows="3"
+                  type="text"
+                  placeholder="Ваше сообщение"
+                  id="message"
+                  name="message"
+                  class="form__input"
+                  required
+                ></textarea>
+              </div>
+              <div class="form__field form__checkbox">
+                <input
+                  class="form__check"
+                  id="checkbox"
+                  name="checkbox"
+                  type="checkbox"
+                  required
+                />
+                <label class="form__label" for="checkbox"
+                  >Я согласен с условиями политики конфинденциальности.</label
+                >
+              </div>
+              <div class="form__controls">
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6Lc_ei0qAAAAADUhAJTHI_6_pwBitbTt0tap0O6e"
+                ></div>
+                <button type="submit" class="btn">Отправить</button>
+              </div>
+            </form>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
     <footer class="footer-bg">
-        <div class="wrapper">
-          <div class="footer">
-            <div class="footer__address">
-              <div class="footer__company">
-                <div class="footer__logo">
-                  <a href="/"><img src="/img/logo-white.png" alt="logo"></a>
-                </div>
-                <div class="footer__social">
-                  <!-- <a href="#"><img src="/img/whatsapp.svg" alt="whatsapp"></a>
+      <div class="wrapper">
+        <div class="footer">
+          <div class="footer__address">
+            <div class="footer__company">
+              <div class="footer__logo">
+                <a href="/"><img src="/img/logo-white.png" alt="logo" /></a>
+              </div>
+              <div class="footer__social">
+                <!-- <a href="#"><img src="/img/whatsapp.svg" alt="whatsapp"></a>
                   <a href="#"><img src="/img/messanger.svg" alt="messanger"></a>
                   <a href="#"><img src="/img/YouTube.svg" alt="YouTube"></a> -->
-                  <a href="#"><img src="/img/email.svg" alt="email"></a>
-                </div>
-              </div>
-              <ul class="footer__contacts">
-                <li class="footer__contact">Адрес: <span>Москва, Киевское шоссе 3, стр.1, 117133 Бизнес-парк G10</span></li>
-                <li class="footer__contact">Телефон: <span>+7 954 543 54 54</span></li>
-                <li class="footer__contact">Email: <span>verycool@email.ru</span></li>
-              </ul>
-              <div class="footer__credentials">
-                <p>© Все права защищены. Made by Andrew Pear</p>
+                <a href="#"><img src="/img/email.svg" alt="email" /></a>
               </div>
             </div>
-            <div class="footer__nav">
-              <a href="/about" class="footer__nav-title">О компании</a>
-              <ul class="footer__anchors">
-                <li><a href="/about#about__title" class="footer__anchor">Описание</a></li>
-                <li><a href="/about#about__image" class="footer__anchor">Фото офиса</a></li>
-              </ul>
+            <ul class="footer__contacts">
+              <li class="footer__contact">
+                Адрес:
+                <span
+                  >Москва, Киевское шоссе 3, стр.1, 117133 Бизнес-парк G10</span
+                >
+              </li>
+              <li class="footer__contact">
+                Телефон: <span>+7 954 543 54 54</span>
+              </li>
+              <li class="footer__contact">
+                Email: <span>info@it-alliance-company.ru</span>
+              </li>
+            </ul>
+            <div class="footer__credentials">
+              <p>© Все права защищены ООО "IT-Alliance"</p>
             </div>
-            <div class="footer__nav">
-              <a href="/vendors" class="footer__nav-title">Вендоры</a>
-              <ul class="footer__anchors">
-                <li><a href="/vendors#our-vendors" class="footer__anchor">Наши вендоры</a></li>
-                <li><a href="/vendors#partner__title" class="footer__anchor">Авторизованный<br/>партнер</a></li>
-              </ul>
-            </div>
-            <div class="footer__nav">
-              <a href="/contacts" class="footer__nav-title">Контакты</a>
-              <ul class="footer__anchors">
-                <li><a href="/contacts#mainmap" class="footer__anchor">Карта</a></li>
-                <li><a href="/contacts#contacts__address" class="footer__anchor">Адрес</a></li>
-                <li><a href="/contacts#contacts__address" class="footer__anchor">График работы</a></li>
-              </ul>
-            </div>
-            <div class="footer__nav">
+          </div>
+          <div class="footer__nav">
+            <a href="/about" class="footer__nav-title">О компании</a>
+            <ul class="footer__anchors">
+              <li>
+                <a href="/about#about__title" class="footer__anchor"
+                  >Описание</a
+                >
+              </li>
+              <li>
+                <a href="/about#about__image" class="footer__anchor"
+                  >Фото офиса</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__nav">
+            <a href="/vendors" class="footer__nav-title">Вендоры</a>
+            <ul class="footer__anchors">
+              <li>
+                <a href="/vendors#our-vendors" class="footer__anchor"
+                  >Наши вендоры</a
+                >
+              </li>
+              <li>
+                <a href="/vendors#partner__title" class="footer__anchor"
+                  >Авторизованный<br />партнер</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer__nav">
+            <a href="/contacts" class="footer__nav-title">Контакты</a>
+            <ul class="footer__anchors">
+              <li>
+                <a href="/contacts#mainmap" class="footer__anchor">Карта</a>
+              </li>
+              <li>
+                <a href="/contacts#contacts__address" class="footer__anchor"
+                  >Адрес</a
+                >
+              </li>
+              <li>
+                <a href="/contacts#contacts__address" class="footer__anchor"
+                  >График работы</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="footer__nav">
               <a href="#" class="footer__nav-title">Поддержка</a>
               <ul class="footer__anchors">
                 <li><a href="#" class="footer__anchor">FAQ</a></li>
                 <li><a href="#" class="footer__anchor">Написать нам</a></li>
               </ul>
-            </div>
-          </div>
+            </div> -->
         </div>
-      </footer>
-  
-      <script>
-        document.getElementById('asking__form').addEventListener('submit', function(event){
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("asking__form")
+        .addEventListener("submit", function (event) {
           let response = grecaptcha.getResponse();
-          if(response.length == 0) {
+          if (response.length == 0) {
             // alert('Вы не прошли проверку CAPTCHA должным образом');
             // console.log("Проверка не пройдена");
             // TODO
             // Красивый обработчик не пройденной капчи (отображать ошибку)
-            event.preventDefault()
+            event.preventDefault();
             return false;
           }
-        })
-      </script>
-      <script src="/js/animationObserver.js"></script>
-      <script src="/js/header.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.js"></script>
-      <script src="/js/swiper.js"></script>
-</body>
+        });
+    </script>
+    <script src="/js/animationObserver.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.js"></script>
+    <script src="/js/swiper.js"></script>
+  </body>
 </html>
