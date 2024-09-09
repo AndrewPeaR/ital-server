@@ -2,10 +2,18 @@
     padding: 24px 0
     display: flex
     justify-content: space-between
+    a[href='/contacts']
+        @include mediaSmallTablet
+            display: none
     .header__wrapper
         display: flex
         gap: 22px
+        @include mediaSmallTablet
+            width: 100%
+            justify-content: space-between
 
-    .header__contacts:hover
-        border-color: $blue
-        background-color: $blue
+
+    .header__contacts
+        &:hover
+            border-color: $blue
+            background-color: $blue

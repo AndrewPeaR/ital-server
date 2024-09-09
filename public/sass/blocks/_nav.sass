@@ -14,11 +14,17 @@
         position: absolute
         top: 0
         right: 0
-        max-height: 53px
         z-index: 3
+        @include mediaSmallDesktop
+            right: 30px
+    &__logo-image
+        max-height: 53px
+        @include mediaMobile
+            max-height: 40px
     .wrapper
         position: relative
         &::after
+            z-index: -1
             content: url(../img/nav-image.svg)
             position: absolute
             top: -200px
@@ -34,10 +40,17 @@
             flex-direction: column
             gap: 21px
             margin-bottom: 60px
+            @include mediaSmallDesktop
+                gap: 10px
+                margin-bottom: 30px
             .nav__item a
                 text-transform: uppercase
                 @include fast-transition
                 @include font-styles(56px, 600, 130%, 0, $dark)
+                @include mediaSmallTablet
+                    font-size: 42px
+                @include mediaMobile
+                    font-size: 32px
                 &:hover
                     color: $blue
         
@@ -47,6 +60,10 @@
             gap: 10px
             a
                 @include font-styles(24px, 500, 130%, 0, $dark)
+                @include mediaSmallTablet
+                    font-size: 20px
+                @include mediaMobile
+                    font-size: 18px
 
 .open
     transform: translateY(0px)

@@ -5,6 +5,21 @@
     letter-spacing: $letter-spacing
     color: $color
 
+@mixin mediaSmallDesktop
+    @media screen and (max-width: 1150px)
+        @content
+@mixin mediaTablet
+    @media screen and (max-width: 768px)
+        @content
+@mixin mediaSmallTablet
+    @media screen and (max-width: 640px)
+        @content
+
+@mixin mediaMobile
+    @media screen and (max-width: 480px)
+        @content
+
+
 @mixin transition
     transition: all 0.35s ease-in-out
 
@@ -26,7 +41,7 @@
     animation-timing-function: ease
     animation-fill-mode: both
 
-@keyframes display-animate 
+@keyframes display-animate
     0%
         opacity: 0
         transform: translateY(100px)

@@ -128,6 +128,12 @@ legend {
   max-width: 1120px;
   margin: 0 auto;
 }
+@media screen and (max-width: 1150px) {
+  .wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 * {
   font-family: "TildaSans", sans-serif;
@@ -166,6 +172,13 @@ html, body {
   line-height: normal;
   letter-spacing: 0;
   color: #313131;
+}
+@media screen and (max-width: 480px) {
+  .btn {
+    font-size: 16px;
+    padding: 10px 15px;
+    height: auto;
+  }
 }
 .btn:hover {
   border-color: none;
@@ -207,6 +220,12 @@ html, body {
   border: 1px solid #313131;
   transition: all 0.2s ease-out;
 }
+@media screen and (max-width: 480px) {
+  .burger {
+    width: 40.8px;
+    height: 40.8px;
+  }
+}
 .burger::before, .burger::after {
   content: "";
   position: absolute;
@@ -216,10 +235,20 @@ html, body {
   transition: all 0.3s ease 0s;
 }
 .burger::before {
-  top: 20px;
+  top: 19px;
+}
+@media screen and (max-width: 480px) {
+  .burger::before {
+    top: 23px;
+  }
 }
 .burger::after {
-  bottom: 20px;
+  bottom: 21px;
+}
+@media screen and (max-width: 480px) {
+  .burger::after {
+    bottom: 23px;
+  }
 }
 .burger:hover {
   border-color: none;
@@ -240,6 +269,11 @@ html, body {
   top: 50%;
   transform: rotate(-45deg) translate(0, -50%);
 }
+@media screen and (max-width: 480px) {
+  .burger.active::before {
+    top: 48%;
+  }
+}
 .burger.active::after {
   background-color: #ffffff;
   bottom: 50%;
@@ -255,9 +289,20 @@ html, body {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 640px) {
+  .header a[href="/contacts"] {
+    display: none;
+  }
+}
 .header .header__wrapper {
   display: flex;
   gap: 22px;
+}
+@media screen and (max-width: 640px) {
+  .header .header__wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 .header .header__contacts:hover {
   border-color: #137ED8;
@@ -281,13 +326,26 @@ html, body {
   position: absolute;
   top: 0;
   right: 0;
-  max-height: 53px;
   z-index: 3;
+}
+@media screen and (max-width: 1150px) {
+  .nav__logo {
+    right: 30px;
+  }
+}
+.nav__logo-image {
+  max-height: 53px;
+}
+@media screen and (max-width: 480px) {
+  .nav__logo-image {
+    max-height: 40px;
+  }
 }
 .nav .wrapper {
   position: relative;
 }
 .nav .wrapper::after {
+  z-index: -1;
   content: url(../img/nav-image.svg);
   position: absolute;
   top: -200px;
@@ -307,6 +365,12 @@ html, body {
   gap: 21px;
   margin-bottom: 60px;
 }
+@media screen and (max-width: 1150px) {
+  .nav .nav__wrapper .nav__items {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+}
 .nav .nav__wrapper .nav__items .nav__item a {
   text-transform: uppercase;
   transition: all 0.2s ease-out;
@@ -315,6 +379,16 @@ html, body {
   line-height: 130%;
   letter-spacing: 0;
   color: #313131;
+}
+@media screen and (max-width: 640px) {
+  .nav .nav__wrapper .nav__items .nav__item a {
+    font-size: 42px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .nav .nav__wrapper .nav__items .nav__item a {
+    font-size: 32px;
+  }
 }
 .nav .nav__wrapper .nav__items .nav__item a:hover {
   color: #137ED8;
@@ -330,6 +404,16 @@ html, body {
   line-height: 130%;
   letter-spacing: 0;
   color: #313131;
+}
+@media screen and (max-width: 640px) {
+  .nav .nav__wrapper .nav__address a {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .nav .nav__wrapper .nav__address a {
+    font-size: 18px;
+  }
 }
 
 .open {
@@ -682,15 +766,32 @@ html, body {
 
 .asking {
   padding: 78px 0;
+  gap: 40px;
   position: relative;
   z-index: 4;
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 768px) {
+  .asking {
+    padding: 30px 0;
+  }
+}
+@media screen and (max-width: 640px) {
+  .asking {
+    flex-direction: column;
+  }
+}
 .asking__info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media screen and (max-width: 640px) {
+  .asking__info {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .asking__info .asking__title {
   text-transform: uppercase;
@@ -701,6 +802,16 @@ html, body {
   letter-spacing: 0;
   color: #F7F7F7;
 }
+@media screen and (max-width: 768px) {
+  .asking__info .asking__title {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .asking__info .asking__title {
+    font-size: 32px;
+  }
+}
 .asking__info .asking__buttons {
   display: flex;
   gap: 18px;
@@ -710,6 +821,11 @@ html, body {
   padding: 35px 25px;
   max-width: 465px;
   width: 100%;
+}
+@media screen and (max-width: 640px) {
+  .asking__form {
+    max-width: 100%;
+  }
 }
 .asking__form .form {
   display: flex;
@@ -763,8 +879,8 @@ html, body {
   display: block;
   border: 1px solid #313131;
   border-radius: 3px;
-  width: 16px;
   height: 16px;
+  aspect-ratio: 1;
 }
 .asking__form .form__controls {
   display: flex;
@@ -1205,6 +1321,28 @@ html, body {
   justify-content: space-between;
   padding: 74px 0 66px 0;
 }
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 40px 0 35px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .footer__address {
+    max-width: 40%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer__address {
+    grid-row: 2/3;
+    grid-column: 1/4;
+    justify-self: start;
+    max-width: 100%;
+  }
+}
 .footer__company {
   display: flex;
   justify-content: space-between;
@@ -1232,6 +1370,11 @@ html, body {
   letter-spacing: 0;
   color: #F7F7F7;
 }
+@media screen and (max-width: 480px) {
+  .footer__contacts .footer__contact {
+    font-size: 14px;
+  }
+}
 .footer__contacts .footer__contact span {
   opacity: 0.6;
 }
@@ -1251,6 +1394,11 @@ html, body {
   letter-spacing: 0;
   color: #F7F7F7;
 }
+@media screen and (max-width: 480px) {
+  .footer__nav .footer__nav-title {
+    font-size: 14px;
+  }
+}
 .footer__nav .footer__anchors {
   margin-top: 16px;
   display: flex;
@@ -1264,4 +1412,9 @@ html, body {
   line-height: normal;
   letter-spacing: 0;
   color: #F7F7F7;
+}
+@media screen and (max-width: 480px) {
+  .footer__nav .footer__anchors .footer__anchor {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=style.css.map */

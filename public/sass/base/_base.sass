@@ -1,6 +1,10 @@
 .wrapper
     max-width: 1120px
     margin: 0 auto
+    @include mediaSmallDesktop
+        padding-left: 20px
+        padding-right: 20px
+
 
 *
     font-family: $font-main
@@ -32,7 +36,10 @@ html, body
     text-transform: uppercase
     @include fast-transition
     @include font-styles(20px, 500, normal, 0, $dark)
-
+    @include mediaMobile
+        font-size: 16px
+        padding: 10px 15px
+        height: auto
     &:hover
         border-color: none
         background-color: $dark
@@ -65,22 +72,27 @@ html, body
     height: 53px
     border: 1px solid $dark
     @include fast-transition
-
+    @include mediaMobile
+        width: 40.8px
+        height: 40.8px
     &::before,
     &::after
         content: ""
         position: absolute
         height: 2px
-        // width: 23px
         width: 45%
         background-color: $dark
         transition: all 0.3s ease 0s
 
     &::before
-        top: 20px
+        top: 19px
+        @include mediaMobile
+            top: 23px
 
     &::after
-        bottom: 20px
+        bottom: 21px
+        @include mediaMobile
+            bottom: 23px
 
     &:hover
         border-color: none
@@ -99,6 +111,8 @@ html, body
             background-color: $white
             top: 50%
             transform: rotate(-45deg) translate(0, -50%)
+            @include mediaMobile
+                top: 48%
 
         &::after
             background-color: $white
