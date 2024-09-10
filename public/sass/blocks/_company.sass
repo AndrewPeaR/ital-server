@@ -6,12 +6,26 @@
     gap: 100px
     position: relative
     z-index: 3
+    @include mediaSmallDesktop
+        gap: 60px
+    @include mediaTablet
+        gap: 20px
+    @include mediaSmallTablet
+        margin-top: 30px
+        grid-template-columns: 1fr
+        gap: 20px
     &::before
         content: url('../img/company-bg.svg')
         position: absolute
         z-index: -1
         top: -80px
         left: -500px
+        @include mediaTablet
+            left: -550px
+        @include mediaSmallTablet
+            content: ''
+            
+        
     &__logo
         background-color: $semiwhite
         border: 1px solid $dark
@@ -23,6 +37,10 @@
     &__link
         @include font-styles(32px, 500, 110%, 0, $dark)
         @include fast-transition
+        @include mediaSmallDesktop
+            font-size: 26px
+        @include mediaTablet
+            font-size: 20px
         &:hover
             color: $blue
         &::after
@@ -32,20 +50,31 @@
         display: flex
         gap: 17px
         margin-bottom: 50px
+        @include mediaTablet
+            gap: 8px
+            margin-bottom: 30px
         .company__tag
             padding: 4px 15px
             background-color: $blue
             text-transform: uppercase
             @include font-styles(16px, 200, 150%, 0, $dark)
+            @include mediaTablet
+                padding: 4px 10px
+                font-size: 14px
     &__title
         text-transform: uppercase
         margin-bottom: 55px
         @include font-styles(64px, 700, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 50px
+            margin-bottom: 20px
     &__text
         white-space: pre-wrap
         margin-bottom: 45px
         text-align: justify
         @include font-styles(24px, 400, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 18px
     &__buttons
         display: flex
         justify-content: center
@@ -53,8 +82,13 @@
         display: inline-block
         padding: 30px 60px
         border: 2px solid $dark
+        background-color: $semiwhite
         @include fast-transition
         @include font-styles(32px, 500, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 24px
+            padding: 10px 15px
+            height: auto
         &:hover
             background-color: $dark
             color: $semiwhite

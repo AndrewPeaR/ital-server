@@ -8,6 +8,17 @@
             text-align: center
             margin-bottom: -70px
             @include font-styles(150px, 600, 90%, 0, $dark)
+            @include mediaSmallDesktop
+                font-size: 120px
+            @include mediaTablet
+                font-size: 100px
+                margin-bottom: -50px
+            @include mediaSmallTablet
+                margin-bottom: -40px
+                font-size: 80px
+            @include mediaMobile
+                font-size: 50px
+                margin-bottom: -25px
             &.activate-animation
                 @include fast-animation(marketing__title)
         .marketing__poster
@@ -19,6 +30,10 @@
             @include font-styles(20px, 400, normal, 0, $dark)
             text-align: justify
             margin-bottom: 33px
+            @include mediaTablet
+                font-size: 16px
+            @include mediaMobile
+                font-size: 14px
 
 
 @keyframes marketing__title

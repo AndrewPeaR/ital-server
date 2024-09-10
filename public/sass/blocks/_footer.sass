@@ -42,8 +42,12 @@
             @include font-styles(16px, 400, normal, 0, $semiwhite)
             @include mediaMobile
                 font-size: 14px
-            span
+            a
+                color: $semiwhite
                 opacity: 0.6
+                @include fast-transition
+                &:hover
+                    opacity: 1
     &__credentials
         @include font-styles(12px, 400, normal, 0, $semiwhite)
     &__nav

@@ -4,23 +4,36 @@
     cursor: pointer
     justify-content: center
     align-items: center
-    width: 53px
+    aspect-ratio: 1
     height: 53px
     background-color: $dark
+    @include mediaTablet
+        height: 40px
 .mySwiper-button-prev
     top: 50%
     transform: translate(0,-50%)
     left: 0
+    @include mediaSmallTablet
+        left: -10px
+
 
 .mySwiper-button-next
     top: 50%
     transform: translate(0,-50%)
     right: 0
+    @include mediaSmallTablet
+        right: -10px
     img
         transform: rotate(180deg)
 .my-swiper-wrapper
     position: relative
     padding: 60px 80px
+    @include mediaSmallDesktop
+        padding: 20px 60px
+    @include mediaTablet
+        padding: 10px 60px
+    @include mediaSmallTablet
+        padding: 10px 40px
 
 .running-stroke
     margin-bottom: 40px

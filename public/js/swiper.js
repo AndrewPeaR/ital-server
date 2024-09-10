@@ -3,12 +3,21 @@ const swiperCustomers = new Swiper(".swiper__customers", {
     autoplay: {
       delay: 3000,
     },
-    spaceBetween: 40,
+    spaceBetween: 20,
     navigation: {
       nextEl: ".mySwiper-button-next",
       prevEl: ".mySwiper-button-prev",
     },
-    slidesPerView: 3,
+    slidesPerView: 2,
+    breakpoints: {
+      980: {
+        spaceBetween: 40,
+        slidesPerView: 3,
+      },
+      640: {
+        slidesPerView: 3,
+      }
+    }
   });
 
 
@@ -34,14 +43,14 @@ const swiperNews = new Swiper(".swiper__news", {
 });
 
 const swiperVendors = new Swiper(".swiper__vendors", {
-  slidesPerView: 3,
-  spaceBetween: 55,
+  slidesPerView: 2,
+  spaceBetween: 20,
   draggable: true,
-  autoplay: {
-    delay: 3000,
-  },
+  // autoplay: {
+  //   delay: 3000,
+  // },
   grid: {
-    rows: 2
+    rows: 1
   },
   scrollbar: {
     el: ".swiper__vendors-scrollbar",
@@ -51,4 +60,19 @@ const swiperVendors = new Swiper(".swiper__vendors", {
     nextEl: ".vendors__controls-next",
     prevEl: ".vendors__controls-back",
   },
+  breakpoints: {
+    1000: {
+      spaceBetween: 55,
+      grid: {
+        rows: 2
+      },
+      slidesPerView: 3,
+    }, 
+    480: {
+      grid: {
+        rows: 2
+      },
+      slidesPerView: 3,
+    }
+  }
 });

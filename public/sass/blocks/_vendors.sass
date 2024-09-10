@@ -1,17 +1,27 @@
 .vendors
     margin-bottom: 126px
+    @include mediaTablet
+        margin-bottom: 80px
+    @include mediaMobile
+        margin-bottom: 40px
     &__title
         max-width: 350px
         line-height: 110%
         margin-bottom: 86px
+        @include mediaTablet
+            font-size: 50px
+            margin-bottom: 30px
     &__list
         margin-bottom: 20px
         .swiper-wrapper
             height: 710px
+            @include mediaTablet
+                height: 500px
+            @include mediaMobile
+                height: auto
         .swiper__vendors-scrollbar
             margin-top: 40px
             border: 2px solid $dark
-            // padding: 1px 0
             background-color: $semiwhite
             width: 100%
             &__drag
@@ -26,15 +36,20 @@
         gap: 10px
         max-width: 890px
         @include font-styles(20px, 400, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 16px
         &::before
             content: '*'
     &__controls
         display: flex
         gap: 27px
+        margin-left: 20px
+        @include mediaMobile
+            gap: 15px
         &-next, &-back
             cursor: pointer
             z-index: 6
-            width: 53px
+            aspect-ratio: 1
             height: 53px
             padding: 15px 12px
             background-size: 60%
@@ -42,5 +57,7 @@
             background-repeat: no-repeat
             background-image: url(../img/arrow.svg)
             background-color: $dark
+            @include mediaMobile
+                height: 40px
         &-next
             transform: rotate(180deg)

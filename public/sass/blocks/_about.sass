@@ -3,15 +3,39 @@
     display: grid
     grid-template-columns: 1fr 1.15fr
     gap: 50px 75px
+    @include mediaSmallDesktop
+        margin: 60px 0
+        gap: 40px 55px
+    @include mediaTablet
+        gap: 20px 35px
+    @include mediaMobile
+        margin: 30px 0
+        grid-template-columns: 1fr
+    #about__title
+        white-space: nowrap
+        @include mediaSmallDesktop
+            font-size: 50px
+        @include mediaTablet
+            font-size: 38px
+        @include mediaSmallTablet
+            font-size: 32px
+        @include mediaMobile
+            margin-bottom: 0
     &__image
         filter: grayscale(100%)
     &__text
         text-align: justify
         @include font-styles(20px, 400, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaSmallTablet
+            font-size: 14px
     
 .about-mainpic
     margin-bottom: 80px
     text-align: center
+    @include mediaSmallTablet
+        margin-bottom: 40px
     img
         filter: grayscale(100%)
         width: 100%
