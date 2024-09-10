@@ -47,20 +47,20 @@ router.get('/vendors/:slug', async (req, res) => {
     // console.log(array);
 })
 
-router.get('/register', (req, res) => res.render('admin/register.ejs'))
-router.post('/register', async (req, res) => {
-    const passwordHash = await bcrypt.hash(req.body.password, 10)
+// router.get('/register', (req, res) => res.render('admin/register.ejs'))
+// router.post('/register', async (req, res) => {
+//     const passwordHash = await bcrypt.hash(req.body.password, 10)
     
-    const newAdmin = await prisma.User.create({
-        data: {
-            email: req.body.email,
-            passwordHash: passwordHash,
-            firstname: req.body.name,
-            lastname: 'Admin'
-        }
-    })
-    res.redirect('/auth/login')
-})
+//     const newAdmin = await prisma.User.create({
+//         data: {
+//             email: req.body.email,
+//             passwordHash: passwordHash,
+//             firstname: req.body.name,
+//             lastname: 'Admin'
+//         }
+//     })
+//     res.redirect('/auth/login')
+// })
 
 
 
