@@ -592,7 +592,8 @@ html, body {
 
 .news__poster {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .news-slider {
@@ -683,7 +684,8 @@ html, body {
 
 .swiper__news-thumbs img {
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .marketing__header {
@@ -862,7 +864,8 @@ html, body {
 }
 .our-vendors__company-image img {
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .our-vendors__company-button {
   border: 2px solid #313131;
@@ -1002,6 +1005,13 @@ html, body {
   line-height: normal;
   letter-spacing: 0;
   color: #313131;
+}
+.asking__form .form__field .form__input::-moz-placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #9a9ca5;
 }
 .asking__form .form__field .form__input::placeholder {
   font-size: 14px;
@@ -1505,8 +1515,10 @@ html, body {
 .contacts .toggle__blocks .toggle__photos .photos__wrapper div img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  object-position: center center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
   filter: grayscale(100%);
   transition: all 0.2s ease-out;
 }
@@ -1569,7 +1581,8 @@ html, body {
   }
 }
 .contacts__address .contacts__image img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   filter: grayscale(100%);
 }
@@ -1629,7 +1642,7 @@ html, body {
 .contacts__address .contacts__info .info__tech-support {
   margin-bottom: 60px;
 }
-.contacts .ymaps3x0--main-engine-container canvas {
+.contacts .ymaps3x0--main-engine-container {
   filter: grayscale(100%);
 }
 
