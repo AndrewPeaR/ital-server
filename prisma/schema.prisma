@@ -53,13 +53,14 @@ model FAQ {
 }
 
 model Company {
-  id           Int    @id @default(autoincrement())
-  name         String @unique
-  description  String
-  imageUrl     String
-  officialSite String
-  CompanyTag   String
-  slug         String @unique
+  id            Int             @id @default(autoincrement())
+  name          String          @unique
+  description   String
+  imageUrl      String
+  officialSite  String
+  CompanyTag    String
+  slug          String          @unique
+  companyBlocks CompanyBlocks[]
 }
 
 model About {
@@ -80,4 +81,24 @@ model Customers {
 model OfficePhoto {
   id       Int    @id @default(autoincrement())
   imageUrl String
+}
+
+model CompanyBlocks {
+  id          Int        @id @default(autoincrement())
+  title       String
+  description String?
+  link        String?
+  Company     Company?   @relation(fields: [companyId], references: [id])
+  companyId   Int?
+  products    Products[]
+}
+
+model Products {
+  id              Int            @id @default(autoincrement())
+  title           String
+  description     String?
+  products        String?
+  link            String?
+  CompanyBlocks   CompanyBlocks? @relation(fields: [companyBlocksId], references: [id])
+  companyBlocksId Int?
 }

@@ -76,7 +76,7 @@
             <div class="header__burger burger">
               <span></span>
             </div>
-            <a href="#backform">
+            <a href="/contacts/#form-phone">
               <div class="header__get-partner btn">Стать партнером</div>
             </a>
           </div>
@@ -113,93 +113,6 @@
     </header>
 
     <%- body %>
-
-    <section class="bg-wrapper" id="backform">
-      <div class="asking-bg"></div>
-      <div class="wrapper">
-        <div class="asking">
-          <div class="asking__info">
-            <h2 class="asking__title">Остались вопросы?</h2>
-            <div class="asking__buttons">
-              <a href="/contacts" class="btn btn_white">Контакты</a>
-              <!-- <a href="#" class="btn btn_white">FAQ</a> -->
-            </div>
-          </div>
-          <div class="asking__form">
-            <form class="form" id="asking__form" action="/create" method="POST">
-              <div class="form__field">
-                <label for="name" class="form__label">Имя</label>
-                <input
-                  type="text"
-                  placeholder="Ваше имя"
-                  id="name"
-                  name="name"
-                  class="form__input"
-                  required
-                />
-              </div>
-              <div class="form__field">
-                <label for="phone" class="form__label">Телефон</label>
-                <input
-                  type="text"
-                  placeholder="Ваш телефон"
-                  id="phone"
-                  name="phone"
-                  class="form__input"
-                  required
-                />
-              </div>
-              <div class="form__field">
-                <label for="email" class="form__label">Почта</label>
-                <input
-                  type="text"
-                  placeholder="Ваша почта"
-                  id="email"
-                  name="email"
-                  class="form__input"
-                  required
-                />
-              </div>
-              <div class="form__field">
-                <label for="message" class="form__label">Сообщение</label>
-                <textarea
-                  rows="3"
-                  type="text"
-                  placeholder="Ваше сообщение"
-                  id="message"
-                  name="message"
-                  class="form__input"
-                  required
-                ></textarea>
-              </div>
-              <div class="form__field form__checkbox">
-                <input
-                  class="form__check"
-                  id="checkbox"
-                  name="checkbox"
-                  type="checkbox"
-                  required
-                />
-                <label class="form__label" for="checkbox"
-                  >
-                  <div>
-                    Я согласен с условиями <a class="form__credentials" href="/docs/Политика конфиденциальности.pdf" target="_blank">политики конфинденциальности.</a>
-                  </div></label
-                >
-              </div>
-              <div class="form__controls">
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6Lc_ei0qAAAAADUhAJTHI_6_pwBitbTt0tap0O6e"
-                  style="transform:scale(0.77);transform-origin:0 0"
-                ></div>
-                <button type="submit" class="btn">Отправить</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <footer class="footer-bg">
       <div class="wrapper">
@@ -293,21 +206,6 @@
       </div>
     </footer>
 
-    <script>
-      document
-        .getElementById("asking__form")
-        .addEventListener("submit", function (event) {
-          let response = grecaptcha.getResponse();
-          if (response.length == 0) {
-            alert('Вы не прошли проверку CAPTCHA, попробуйте снова');
-            // console.log("Проверка не пройдена");
-            // TODO
-            // Красивый обработчик не пройденной капчи (отображать ошибку)
-            event.preventDefault();
-            return false;
-          }
-        });
-    </script>
     <script src="/js/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.9/swiper-bundle.min.js"></script>
     <script src="/js/swiper.js"></script>

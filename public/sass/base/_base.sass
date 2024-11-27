@@ -10,6 +10,7 @@
     font-family: $font-main
 
 html, body
+    overflow-x: hidden
     background-color: $semiwhite
 
 .uptop
@@ -58,6 +59,12 @@ html, body
     margin-bottom: 60px
     text-transform: uppercase
     @include font-styles(68px, 700, normal, 0, $blue)
+    @include mediaMobile
+        font-size: 42px
+.section-description
+    margin-bottom: 60px
+    @include font-styles(36px, 500, normal, 0, $dark)
+
 // ADAPTIVE MOBILE
 // .open
 //     display: flex !important

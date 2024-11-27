@@ -1,36 +1,73 @@
 <% layout('layouts/main') %>
 
 <section>
-    <div class="wrapper">
-        <div class="company">
-            <div class="company__image">
-                <div class="company__logo">
-                    <img src="/uploads/vendors/<%= vendor.imageUrl %>" alt="<%= vendor.imageUrl %>">
-                </div>
-                <a class="company__link" target="_blank" href="<%= vendor.officialSite %>">Официальный сайт</a>
-            </div>
-            <div class="company__info">
-                <div class="company__tags">
-                    <% vendor.CompanyTag.forEach(function(tag){  %>
-                    <div class="company__tag">
-                        <%= tag %>
-                    </div>
-                    <% }) %>
-                    <!-- <div class="company__tag">
+  <div class="wrapper">
+    <div class="company">
+      <div class="company__image">
+        <div class="company__logo">
+          <img
+            src="/uploads/vendors/<%= vendor.imageUrl %>"
+            alt="<%= vendor.imageUrl %>"
+          />
+        </div>
+        <a
+          class="company__link"
+          target="_blank"
+          href="<%= vendor.officialSite %>"
+          >Подробнее</a
+        >
+      </div>
+      <div class="company__info">
+        <div class="company__tags">
+          <% vendor.CompanyTag.forEach(function(tag){ %>
+          <div class="company__tag"><%= tag %></div>
+          <% }) %>
+          <!-- <div class="company__tag">
                         Безопасность
                     </div> -->
-                </div>
-                <h2 class="company__title"><%= vendor.name %></h2>
-                <div class="company__description">
-                    <p class="company__text"><%= vendor.description %></p>
-                    <!-- <p class="company__text">A-FOUR TECH CO., LTD. (A4Tech), основанная в 1987 году в Тайване, специализируется на производстве компьютерной периферии: веб-камеры, мыши, клавиатуры, игровые манипуляторы и другие устройства. В 1996 году компания перенесла свои производственные мощности в Китай.</p>
+        </div>
+        <h2 class="company__title"><%= vendor.name %></h2>
+        <div class="company__description">
+          <p class="company__text"><%= vendor.description %></p>
+          <!-- <p class="company__text">A-FOUR TECH CO., LTD. (A4Tech), основанная в 1987 году в Тайване, специализируется на производстве компьютерной периферии: веб-камеры, мыши, клавиатуры, игровые манипуляторы и другие устройства. В 1996 году компания перенесла свои производственные мощности в Китай.</p>
                     <p class="company__text">Компания владеет двумя международными брендами периферийных устройств - A4Tech и Bloody (игровая серия, успешно вышедшая на рынок в 2011 году- www.bloody.com). Благодаря передовой команде разработчиков и собственной независимой экспертизе, A4Tech продолжает выпускать высокотехнологичный продукт, который требуется для самого взыскательного потребителя. В основе философии компании лежит принцип — воплощать новые идеи с помощью технологий.</p>
                     <p class="company__text">На рынках стран СНГ продукция A4Tech присутствует с 1990 года. Компания MERLION является официальным дистрибьютором A4Tech на территории РФ более 10 лет.</p> -->
-                </div>
-                <div class="company__buttons">
-                    <a href="/contacts" class="company__button">Связаться с нами</a>
-                </div>
-            </div>
         </div>
+        <div class="company__buttons">
+          <a href="/contacts" class="company__button">Связаться с нами</a>
+        </div>
+      </div>
     </div>
+    <div class="company-blocks">
+      <% vendor.companyBlocks.forEach(item => { %>
+        <% if(item.products.length > 0){ %>
+      <div class="company-blocks__block">
+        <div class="company-blocks__text">
+            <h3 class="section-title"><%= item.title %></h3>
+            <p class="company-blocks__title-description">
+              <%= item.description %>
+            </p>
+        </div>
+        <% item.products.forEach(product => { %>
+        <a target="_blank" href="<%= product.link %>" class="company-blocks__product <%= product.link === '' ? 'company-blocks__product_without-link' : 'company-blocks__product_link' %>">
+          <div class="company-blocks__info">
+            <h3 class="company-blocks__title"><%= product.title %></h3>
+            <p class="company-blocks__description">
+                <%= product.description %>
+            </p>
+            <p class="company-blocks__products">
+                <%= product.products %>
+            </p>
+          </div>
+        </a>
+        <% }) %>
+        <% if(item.link !== null && item.link !== ''){ %>
+        <div class="btn_wrapper btn_company">
+            <a class="btn" href="<%= item.link %>">Подробнее</a>
+        </div>
+        <% } %>
+      </div>
+      <% } }) %>
+    </div>
+  </div>
 </section>

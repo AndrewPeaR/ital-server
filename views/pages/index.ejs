@@ -40,6 +40,14 @@
     </div>
   </div>
 
+  <section>
+    <div class="wrapper">
+      <div class="vectors">
+        <h2 class="section-title">Основные направления деятельности</h2>
+        <p class="section-description">Раздел в разработке</p>
+      </div>
+    </div>
+  </section>
   <!-- <section class="news-slider__animate">
     <div class="wrapper">
       <div class="news-slider">
@@ -227,27 +235,6 @@
       </div>
     </div>
   </section> -->
-
-  <section>
-    <div class="wrapper">
-      <div class="marketing">
-        <div class="marketing__header">
-          <h2 class="marketing__title">IT alliance<br />company</h2>
-          <img class="marketing__poster" src="./img/it-alliance.png" alt="it-alliance">
-        </div>
-        <div class="marketing__info">
-            <% for(item of info) { %>
-              <% if(item.slug === 'mini-description') {%>
-                <p><%= item.value %></p>
-              <% }} %>
-          <div class="btn_wrapper">
-            <a class="btn btn_outline" href="/about">Подробнее</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section>
     <div class="wrapper">
       <div class="our-vendors">
@@ -289,8 +276,60 @@
         <p class="our-vendors__info">
           Мы стремимся  предлагать своим клиентам  лучшие решения и технологии, поэтому  мы  сотрудничаем  с ведущими  вендорами  в своей области. Наши партнеры - это  компании, которые  делят наши  ценности и  стремятся  к  безупречному качеству.
         </p>
-        <div class="btn_wrapper">
+        <div class="btn_wrapper our-vendors__btn">
           <a class="btn btn_outline" href="/vendors">Все вендоры</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrapper">
+      <div class="advantages">
+        <h2 class="section-title">Наши преимущества</h2>
+        <p class="section-description">ИТ-Альянс имеет прямые контракты поставки.</p>
+        <div class="advantages__items">
+          <div class="advantages__item">
+            <div class="advantages__counter">1</div>
+            <div class="advantages__image">
+              <img src="/img/advantages1.png" alt="advantages1">
+            </div>
+            <p class="advantages__text">Профессиональная команда</p>
+          </div>
+          <div class="advantages__item">
+            <div class="advantages__counter">2</div>
+            <div class="advantages__image">
+              <img src="/img/advantages2.png" alt="advantages2">
+            </div>
+            <p class="advantages__text">Проверенные решения</p>
+          </div>
+          <div class="advantages__item">
+            <div class="advantages__counter">3</div>
+            <div class="advantages__image">
+              <img src="/img/advantages3.png" alt="advantages3">
+            </div>
+            <p class="advantages__text">Надёжные поставщики и&nbsp;производители</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrapper">
+      <div class="marketing">
+        <div class="marketing__header">
+          <h2 class="marketing__title">IT alliance<br />company</h2>
+          <img class="marketing__poster" src="./img/it-alliance-new.png" alt="it-alliance">
+        </div>
+        <div class="marketing__info">
+            <% for(item of info) { %>
+              <% if(item.slug === 'mini-description') {%>
+                <p><%= item.value %></p>
+              <% }} %>
+          <div class="btn_wrapper">
+            <a class="btn btn_outline" href="/about">Подробнее</a>
+          </div>
         </div>
       </div>
     </div>

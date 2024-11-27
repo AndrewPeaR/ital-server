@@ -1,0 +1,46 @@
+.vectors
+    margin-bottom: 90px
+    position: relative
+    z-index: 2
+    &::after
+        content: url('../img/company-bg.svg')
+        position: absolute
+        bottom: -82%
+        left: 30%
+        z-index:-1
+        opacity: 0.2
+        transform: rotate(110deg)
+    &__items
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+        z-index: 5
+        
+        .vectors
+            &__item
+                position: relative
+            &__counter
+                position: absolute
+                z-index: 10
+                padding: 13px 23px
+                border-radius: 11px
+                background-color: $blue
+                @include font-styles(24px, 600, normal, 0, $white)
+            &__text
+                position: absolute
+                left: 80px
+                bottom: 0
+                max-width: 264px
+                height: 60px
+                display: flex
+                align-items: center
+                @include font-styles(20px, 500, normal, 0, $dark)
+            &__image
+                border-radius: 11px
+                height: 287px
+                mask: url(../img/clip-advantages.svg)
+                mask-size: cover
+                mask-position: bottom left
+                mask-composite: exclude
+                mask-repeat: no-repeat

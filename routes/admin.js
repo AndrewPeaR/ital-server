@@ -68,7 +68,15 @@ router.get("/vendors/:id", async (req, res) => {
     where: {
       id: Number(req.params.id),
     },
+    include: {
+      companyBlocks: {
+        include: {
+          products: true
+        }
+      }
+    }
   });
+  // console.log(vendors)
   res.render("admin/updateVendors.ejs", { user: req.user, vendors: vendors });
 });
 router.post("/vendors/create", async (req, res) => {
@@ -132,6 +140,79 @@ router.get("/vendors/delete/:id", async (req, res) => {
     res.redirect("/admin/vendors");
   }
 });
+router.post("/vendors/blocks/add/:id", async (req, res) => {
+  const newBlock = await prisma.CompanyBlocks.create({
+    data: {
+      title: 'New block',
+      companyId: Number(req.params.id)
+    },
+  });
+  res.redirect(`/admin/vendors/${req.params.id}`);
+});
+router.get("/vendors/:companyId/blocks/delete/:id", async (req, res) => {
+  const deleteBlock = await prisma.CompanyBlocks.delete({
+    where: {
+      id: Number(req.params.id)
+    }
+  })
+  res.redirect(`/admin/vendors/${req.params.companyId}`)
+})
+router.get("/vendors/:companyId/blocks/update/:id", async (req, res) => {
+  const block = await prisma.CompanyBlocks.findUnique({
+    where: {
+      id: Number(req.params.id)
+    }
+  })
+  // console.log(block)
+  res.render('admin/updateVendorsBlock.ejs', {user: req.user, updateBlock: block, vendorsId: req.params.companyId})
+})
+router.post("/vendors/:companyId/blocks/update/:id", async (req, res) => {
+  const updateBlock = await prisma.CompanyBlocks.update({
+    where: {
+      id: Number(req.params.id)
+    },
+    data: {
+      title: req.body.title,
+      description: req.body.description,
+      link: req.body.link
+    }
+  })
+  res.render('admin/updateVendorsBlock.ejs', {user: req.user, updateBlock: updateBlock, vendorsId: req.params.companyId})
+})
+router.post("/vendors/:companyId/products/update/:id", async (req, res) => {
+  const updateProduct = await prisma.Products.update({
+    where: {
+      id: Number(req.params.id)
+    },
+    data: {
+      title: req.body.productTitle,
+      description: req.body.productDescription,
+      products: req.body.productProducts,
+      link: req.body.productLink
+    }
+  })
+  res.redirect(`/admin/vendors/${req.params.companyId}`)
+})
+router.post('/vendors/:companyId/products/add/:blockId', async (req, res) => {
+  const product = await prisma.Products.create({
+    data: {
+      title: 'Новый товар',
+      link: '',
+      companyBlocksId: Number(req.params.blockId)
+    }
+  })
+  res.redirect(`/admin/vendors/${req.params.companyId}`)
+})
+router.get('/vendors/:companyId/products/delete/:blockId', async (req, res) => {
+  const product = await prisma.Products.delete({
+    where: {
+      id: Number(req.params.blockId)
+    }
+  })
+  res.redirect(`/admin/vendors/${req.params.companyId}`)
+})
+
+
 
 router.get('/about', async (req, res) => {
   const items = await prisma.About.findMany()

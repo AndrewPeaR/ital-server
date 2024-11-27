@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
 
 router.get('/', async (req, res) => {
     const vendors = await prisma.Company.findMany({
-        take: 3
+        take: 4
     })
     const customers = await prisma.Customers.findMany()
     const info = await prisma.about.findMany()
@@ -24,7 +24,6 @@ router.get('/about', async (req, res) => {
 })
 router.get('/vendors', async (req, res) => {
     const vendors = await prisma.Company.findMany()
-    
     res.render('pages/vendors.ejs', {vendors: vendors})
 })
 router.get('/contacts', async (req, res) => {
@@ -40,11 +39,17 @@ router.get('/vendors/:slug', async (req, res) => {
     const vendor = await prisma.Company.findUnique({
         where: {
             slug: req.params.slug
+        },
+        include: {
+            companyBlocks: {
+                include: {
+                    products: true
+                }
+            }
         }
     })
     vendor.CompanyTag = vendor.CompanyTag.split(', ')
     res.render('pages/company.ejs', {user: req.user, vendor: vendor})
-    // console.log(array);
 })
 
 // router.get('/register', (req, res) => res.render('admin/register.ejs'))

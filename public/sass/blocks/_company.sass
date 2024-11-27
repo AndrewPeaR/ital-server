@@ -2,8 +2,8 @@
     margin-bottom: 68px
     margin-top: 87px
     display: grid
-    grid-template-columns: 0.9fr 1.1fr
-    gap: 100px
+    grid-template-columns: 0.4fr 1.6fr
+    gap: 50px
     position: relative
     z-index: 3
     @include mediaSmallDesktop
@@ -34,6 +34,9 @@
         justify-content: center
         align-items: center
         margin-bottom: 20px
+        padding: 10px
+        @include mediaSmallTablet
+            width: 45%
     &__link
         @include font-styles(32px, 500, 110%, 0, $dark)
         @include fast-transition
@@ -49,7 +52,7 @@
     &__tags
         display: flex
         gap: 17px
-        margin-bottom: 50px
+        margin-bottom: 40px
         @include mediaTablet
             gap: 8px
             margin-bottom: 30px
@@ -63,7 +66,7 @@
                 font-size: 14px
     &__title
         text-transform: uppercase
-        margin-bottom: 55px
+        margin-bottom: 20px
         @include font-styles(64px, 700, normal, 0, $dark)
         @include mediaTablet
             font-size: 50px
@@ -80,16 +83,92 @@
         justify-content: center
     &__button
         display: inline-block
-        padding: 30px 60px
+        padding: 15px 30px
         border: 2px solid $dark
         background-color: $semiwhite
         @include fast-transition
-        @include font-styles(32px, 500, normal, 0, $dark)
+        @include font-styles(24px, 500, normal, 0, $dark)
         @include mediaTablet
-            font-size: 24px
+            font-size: 20px
             padding: 10px 15px
             height: auto
         &:hover
             background-color: $dark
             color: $semiwhite
 
+.company-blocks
+    &__block
+        position: relative
+        z-index: 8
+        margin-bottom: 50px
+        @include mediaTablet
+            margin-bottom: 30px
+        &:not(:last-child)::after
+            margin-top: 50px
+            content: ''
+            display: block
+            width: 100%
+            height: 1px
+            border-radius: 100px
+            opacity: 0.2
+            background-color: $dark
+            @include mediaMobile
+                margin-top: 30px
+    &__title-link
+        color: $dark
+        @include fast-transition
+        &:hover
+            color: $blue
+    &__text
+        display: flex
+        justify-content: space-between
+        @include mediaTablet
+            flex-direction: column
+            margin-bottom: 30px
+            gap: 10px
+            & .section-title
+                margin-bottom: 0
+    &__title-description
+        max-width: 390px
+        text-align: right
+        @include mediaTablet
+            max-width: 100%
+            text-align: left
+    &__product
+        cursor: pointer
+        display: flex
+        position: relative
+        border: 1px solid $semiwhite
+        margin-bottom: 10px
+        cursor: default
+        @include transition
+        &:nth-child(even)
+            background-color: rgba(19, 123, 212, 0.16)
+        
+        &_link:hover
+            cursor: pointer
+            border: 1px solid $dark
+            border-color: $dark
+            background-color: rgba(19, 123, 212, 0.37)
+        
+    &__info
+        padding: 25px 35px
+        @include mediaMobile
+            padding: 15px 20px
+            
+    &__title
+        margin-bottom: 20px
+        @include font-styles(24px, 600, normal, 0, $dark)
+    &__description
+        margin-bottom: 15px
+        @include font-styles(20px, 500, normal, 0, $dark)
+        @include mediaMobile
+            font-size: 16px
+    &__products
+        display: block
+        @include font-styles(16px, 500, normal, 0, $dark)
+        @include mediaMobile
+            font-size: 14px
+        
+.btn_company
+    margin-top: 30px

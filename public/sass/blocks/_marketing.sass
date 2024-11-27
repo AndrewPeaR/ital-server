@@ -1,4 +1,5 @@
 .marketing
+    margin-bottom: 90px
     &__header
         display: flex
         align-items: center
@@ -6,7 +7,7 @@
         .marketing__title
             text-transform: uppercase
             text-align: center
-            margin-bottom: -70px
+            margin-bottom: -50px
             @include font-styles(150px, 600, 90%, 0, $dark)
             @include mediaSmallDesktop
                 font-size: 120px
@@ -26,6 +27,7 @@
             &.activate-animation
                 @include fast-animation(marketing__poster)
     &__info
+        margin-top: 20px
         p
             @include font-styles(20px, 400, normal, 0, $dark)
             text-align: justify

@@ -4,6 +4,26 @@
     <div class="wrapper">
         <div class="contacts">
             <h2 class="section-title contacts-title">Есть вопросы?<br />Свяжитесь с нами!</h2>
+            <div class="contacts__address" id="contacts__address">
+              <div class="contacts__image">
+                  <img src="/uploads/about/<%= office.value %>" alt="office">
+              </div>
+              <div class="contacts__info">
+                  <div class="info">
+                      <h3 class="info__title">Головной офис</h3>
+                      <p class="info__text"><a target="_blank" href="https://yandex.ru/maps/org/g10/1752984132/?ll=37.460558%2C55.633444&mode=search&sctx=ZAAAAAgBEAAaKAoSCaJinL8JQ1FAERmuDoC4gU5AEhIJGw5LAz%2BqtT8RYoOFkzR%2FnD8iBgABAgMEBSgKOABAu%2F8GSAFiSHJlYXJyPXNjaGVtZV9Mb2NhbC9HZW8vTWVkaWFGbG93L1N0b3JpZXNDb250ZW50VHlwZT1vbGRfbWVkaWFfY2xhc3NpZmllcmoCcnWdAc3MTD2gAQCoAQC9AVA2NjjCAQXE1PHDBoICbzExNzEzMywg0JzQvtGB0LrQstCwLCAyMS3QuSDQutC8Liwg0JrQuNC10LLRgdC60L7QtSDRiNC%2B0YHRgdC1IDMsINGB0YLRgNC%2B0LXQvdC40LUgMSwg0JHQuNC30L3QtdGBLdC%2F0LDRgNC6IEcxMIoCAJICBjExNDYxOZoCDGRlc2t0b3AtbWFwc6oCoQExMjI5NTIwOTg2ODIsNjIxMjM4NDMxLDM0NTg5MjI2NiwyMTc1NjUyNjAyNjksNjc3OTk2NjUzNTgsMzg5MTc0NTMxLDM4MzE1MTkxNTM2LDg1MTM4OTIyOCw4ODM2Njg2MzAzLDQyMzE0OTA1MjksMTkzNTcxODA1NzAsMTQ5MTM2OTc5NzkxLDM3NzEzNTYwNDMxLDE1NDczMzMwNzM5OLACAQ%3D%3D&sll=37.452803%2C55.634210&sspn=0.073674%2C0.028235&text=117133%2C%20Москва%2C%2021-й%20км.%2C%20Киевское%20шоссе%203%2C%20строение%201%2C%20Бизнес-парк%20G10&z=15.53">117133, Москва, 21-й км., Киевское шоссе 3, строение 1, Бизнес-парк G10</a></p>
+                      <p class="info__text"><a href="tel:+74952225003">8 (495) 222-50-03</a><br />время работы: 9:00 - 19:00</p>
+                      <p class="info__text">Email: <a href="mailto:info@it-alliance-company.ru">info@it-alliance-company.ru</a></p>
+                  </div>
+                  <div class="info">
+                      <h3 class="info__title">Техподдержка</h3>
+                      <!-- <p class="info__text"><a href="#">Подать заявку</a></p> -->
+                      <p class="info__text">Email: <a href="mailto:support@it-alliance-company.ru">support@it-alliance-company.ru</a></p>
+                      <p class="info__text info__tech-support">Телефон: <a href="tel:+78005510855">8 (800) 551-08-55</a></p>
+                      <a class="info__button" target="_blank" href="http://sd.it-alliance-company.ru/">Написать</a>
+                  </div>
+              </div>
+          </div>
             <div class="contacts__map">
                 <div class="contacts__toggle" id="mainmap">
                     <input id="toggle__checkbox" type="checkbox" class="toggle__checkbox">
@@ -32,29 +52,102 @@
                     </div>
                 </div>
             </div>
-            <div class="contacts__address" id="contacts__address">
-                <div class="contacts__image">
-                    <img src="/uploads/about/<%= office.value %>" alt="office">
-                </div>
-                <div class="contacts__info">
-                    <div class="info">
-                        <h3 class="info__title">Головной офис</h3>
-                        <p class="info__text"><a target="_blank" href="https://yandex.ru/maps/org/g10/1752984132/?ll=37.460558%2C55.633444&mode=search&sctx=ZAAAAAgBEAAaKAoSCaJinL8JQ1FAERmuDoC4gU5AEhIJGw5LAz%2BqtT8RYoOFkzR%2FnD8iBgABAgMEBSgKOABAu%2F8GSAFiSHJlYXJyPXNjaGVtZV9Mb2NhbC9HZW8vTWVkaWFGbG93L1N0b3JpZXNDb250ZW50VHlwZT1vbGRfbWVkaWFfY2xhc3NpZmllcmoCcnWdAc3MTD2gAQCoAQC9AVA2NjjCAQXE1PHDBoICbzExNzEzMywg0JzQvtGB0LrQstCwLCAyMS3QuSDQutC8Liwg0JrQuNC10LLRgdC60L7QtSDRiNC%2B0YHRgdC1IDMsINGB0YLRgNC%2B0LXQvdC40LUgMSwg0JHQuNC30L3QtdGBLdC%2F0LDRgNC6IEcxMIoCAJICBjExNDYxOZoCDGRlc2t0b3AtbWFwc6oCoQExMjI5NTIwOTg2ODIsNjIxMjM4NDMxLDM0NTg5MjI2NiwyMTc1NjUyNjAyNjksNjc3OTk2NjUzNTgsMzg5MTc0NTMxLDM4MzE1MTkxNTM2LDg1MTM4OTIyOCw4ODM2Njg2MzAzLDQyMzE0OTA1MjksMTkzNTcxODA1NzAsMTQ5MTM2OTc5NzkxLDM3NzEzNTYwNDMxLDE1NDczMzMwNzM5OLACAQ%3D%3D&sll=37.452803%2C55.634210&sspn=0.073674%2C0.028235&text=117133%2C%20Москва%2C%2021-й%20км.%2C%20Киевское%20шоссе%203%2C%20строение%201%2C%20Бизнес-парк%20G10&z=15.53">117133, Москва, 21-й км., Киевское шоссе 3, строение 1, Бизнес-парк G10</a></p>
-                        <p class="info__text"><a href="tel:+74952225003">8 (495) 222-50-03</a><br />время работы: 9:00 - 19:00</p>
-                        <p class="info__text">Email: <a href="mailto:info@it-alliance-company.ru">info@it-alliance-company.ru</a></p>
-                    </div>
-                    <div class="info">
-                        <h3 class="info__title">Техподдержка</h3>
-                        <!-- <p class="info__text"><a href="#">Подать заявку</a></p> -->
-                        <p class="info__text">Email: <a href="mailto:support@it-alliance-company.ru">support@it-alliance-company.ru</a></p>
-                        <p class="info__text info__tech-support">Телефон: <a href="tel:+78005510855">8 (800) 551-08-55</a></p>
-                        <a class="info__button" target="_blank" href="http://sd.it-alliance-company.ru/">Написать</a>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
+
+<section class="bg-wrapper" id="backform">
+    <div class="asking-bg"></div>
+    <div class="wrapper">
+      <div class="asking">
+        <div class="asking__info">
+          <div>
+            <h2 class="asking__title">Обратная связь</h2>
+            <p class="asking__description" id="form-phone">Номер телефона: <a href="tel:84952225003">8 (495) 222-50-03</a></p>
+            <p class="asking__description">Почта: <a href="mailto:info@it-alliance-company.ru">info@it-alliance-company.ru</a></p>
+            <p class="asking__description">Адрес: <a target="_blank" href="https://yandex.ru/maps/org/g10/1752984132/?ll=37.460558%2C55.633444&mode=search&sctx=ZAAAAAgBEAAaKAoSCaJinL8JQ1FAERmuDoC4gU5AEhIJGw5LAz%2BqtT8RYoOFkzR%2FnD8iBgABAgMEBSgKOABAu%2F8GSAFiSHJlYXJyPXNjaGVtZV9Mb2NhbC9HZW8vTWVkaWFGbG93L1N0b3JpZXNDb250ZW50VHlwZT1vbGRfbWVkaWFfY2xhc3NpZmllcmoCcnWdAc3MTD2gAQCoAQC9AVA2NjjCAQXE1PHDBoICbzExNzEzMywg0JzQvtGB0LrQstCwLCAyMS3QuSDQutC8Liwg0JrQuNC10LLRgdC60L7QtSDRiNC%2B0YHRgdC1IDMsINGB0YLRgNC%2B0LXQvdC40LUgMSwg0JHQuNC30L3QtdGBLdC%2F0LDRgNC6IEcxMIoCAJICBjExNDYxOZoCDGRlc2t0b3AtbWFwc6oCoQExMjI5NTIwOTg2ODIsNjIxMjM4NDMxLDM0NTg5MjI2NiwyMTc1NjUyNjAyNjksNjc3OTk2NjUzNTgsMzg5MTc0NTMxLDM4MzE1MTkxNTM2LDg1MTM4OTIyOCw4ODM2Njg2MzAzLDQyMzE0OTA1MjksMTkzNTcxODA1NzAsMTQ5MTM2OTc5NzkxLDM3NzEzNTYwNDMxLDE1NDczMzMwNzM5OLACAQ%3D%3D&sll=37.452803%2C55.634210&sspn=0.073674%2C0.028235&text=117133%2C%20Москва%2C%2021-й%20км.%2C%20Киевское%20шоссе%203%2C%20строение%201%2C%20Бизнес-парк%20G10&z=15.53">Москва, Киевское шоссе 3, стр.1, 117133 Бизнес-парк G10</a></p>
+          </div>
+          <div class="asking__buttons">
+            <a href="/contacts" class="btn btn_white">Контакты</a>
+            <!-- <a href="#" class="btn btn_white">FAQ</a> -->
+          </div>
+        </div>
+        <div class="asking__form">
+          <form class="form" id="asking__form" action="/create" method="POST">
+            <div class="form__field">
+              <label for="name" class="form__label">Имя</label>
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                id="name"
+                name="name"
+                class="form__input"
+                required
+              />
+            </div>
+            <div class="form__field">
+              <label for="phone" class="form__label">Телефон</label>
+              <input
+                type="text"
+                placeholder="Ваш телефон"
+                id="phone"
+                name="phone"
+                class="form__input"
+                required
+              />
+            </div>
+            <div class="form__field">
+              <label for="email" class="form__label">Почта</label>
+              <input
+                type="text"
+                placeholder="Ваша почта"
+                id="email"
+                name="email"
+                class="form__input"
+                required
+              />
+            </div>
+            <div class="form__field">
+              <label for="message" class="form__label">Сообщение</label>
+              <textarea
+                rows="3"
+                type="text"
+                placeholder="Ваше сообщение"
+                id="message"
+                name="message"
+                class="form__input"
+                required
+              ></textarea>
+            </div>
+            <div class="form__field form__checkbox">
+              <input
+                class="form__check"
+                id="checkbox"
+                name="checkbox"
+                type="checkbox"
+                required
+              />
+              <label class="form__label" for="checkbox"
+                >
+                <div>
+                  Я согласен с условиями <a class="form__credentials" href="/docs/Политика конфиденциальности.pdf" target="_blank">политики конфинденциальности.</a>
+                </div></label
+              >
+            </div>
+            <div class="form__controls">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6Lc_ei0qAAAAADUhAJTHI_6_pwBitbTt0tap0O6e"
+                style="transform:scale(0.77);transform-origin:0 0"
+              ></div>
+              <button type="submit" class="btn">Отправить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <script src="https://api-maps.yandex.ru/v3/?apikey=a8a171f0-1d76-426b-9c1f-c6c58d7df875&lang=ru_RU"></script>
     <script>
@@ -88,6 +181,21 @@
         map.addChild(new ymaps3.YMapDefaultFeaturesLayer({ zIndex: 1800 }));
         map.addChild(marker);
       }
+    </script>
+    <script>
+      document
+        .getElementById("asking__form")
+        .addEventListener("submit", function (event) {
+          let response = grecaptcha.getResponse();
+          if (response.length == 0) {
+            alert('Вы не прошли проверку CAPTCHA, попробуйте снова');
+            // console.log("Проверка не пройдена");
+            // TODO
+            // Красивый обработчик не пройденной капчи (отображать ошибку)
+            event.preventDefault();
+            return false;
+          }
+        });
     </script>
     <script>
         const lightbox = GLightbox({

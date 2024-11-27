@@ -1,0 +1,55 @@
+<% layout('layouts/admin') %>
+
+<div class="container mb-5 pb-5">
+  <h1 class="mb-3">Изменить блок</h1>
+  <a href="/admin/vendors/<%= vendorsId %>" class="mb-2 btn btn-primary">Вернуться к вендору</a>
+  <div class="row mb-4">
+    <div class="col">
+      <form
+        class="w-50 mx-auto"
+        method="POST"
+        action="/admin/vendors/<%= vendorsId %>/blocks/update/<%= updateBlock.id %>"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group mb-4">
+          <label for="title">Название</label>
+          <input
+            type="text"
+            value="<%= updateBlock.title %>"
+            class="form-control"
+            id="title"
+            name="title"
+            aria-describedby="title"
+            placeholder="Введите название"
+          />
+        </div>
+        <div class="form-group mb-4">
+          <label for="description">Описание</label>
+          <textarea
+            type="text"
+            rows="4"
+            class="form-control"
+            name="description"
+            id="description"
+            placeholder="Введите описание"
+          >
+<%= updateBlock.description %></textarea
+          >
+        </div>
+        <div class="form-group mb-4">
+          <label for="officialSite">Ссылка</label>
+          <input
+            type="text"
+            value="<%= updateBlock.link %>"
+            class="form-control"
+            id="link"
+            name="link"
+            aria-describedby="link"
+            placeholder="Введите ссылку на официальный сайт"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Обновить</button>
+      </form>
+    </div>
+  </div>
+</div>

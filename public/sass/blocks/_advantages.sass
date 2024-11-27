@@ -1,0 +1,44 @@
+.advantages
+    margin-bottom: 90px
+    position: relative
+    &::after
+        content: url('../img/company-bg.svg')
+        position: absolute
+        bottom: -29%
+        left: 43%
+        z-index: 0
+        opacity: 0.2
+        transform: rotate(218deg)
+    &__items
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+        z-index: 5
+        
+        .advantages
+            &__item
+                position: relative
+            &__counter
+                position: absolute
+                z-index: 10
+                padding: 13px 23px
+                border-radius: 11px
+                background-color: $blue
+                @include font-styles(24px, 600, normal, 0, $white)
+            &__text
+                position: absolute
+                left: 80px
+                bottom: 0
+                max-width: 264px
+                height: 60px
+                display: flex
+                align-items: center
+                @include font-styles(24px, 500, normal, 0, $dark)
+            &__image
+                border-radius: 11px
+                mask: url(../img/clip-advantages.svg)
+                mask-size: cover
+                mask-position: top left
+                mask-composite: exclude
+                mask-repeat: no-repeat

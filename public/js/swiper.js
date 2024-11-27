@@ -43,7 +43,7 @@ const swiperNews = new Swiper(".swiper__news", {
 });
 
 const swiperVendors = new Swiper(".swiper__vendors", {
-  slidesPerView: 2,
+  slidesPerView: 3,
   spaceBetween: 20,
   draggable: true,
   // autoplay: {
@@ -62,11 +62,10 @@ const swiperVendors = new Swiper(".swiper__vendors", {
   },
   breakpoints: {
     1000: {
-      spaceBetween: 55,
       grid: {
         rows: 2
       },
-      slidesPerView: 3,
+      slidesPerView: 4,
     }, 
     480: {
       grid: {
