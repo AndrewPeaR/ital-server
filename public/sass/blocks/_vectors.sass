@@ -1,46 +1,75 @@
-.vectors
+.vectors-bg
     margin-bottom: 90px
     position: relative
     z-index: 2
     &::after
         content: url('../img/company-bg.svg')
         position: absolute
-        bottom: -82%
-        left: 30%
+        bottom: -22%
+        right: 42%
         z-index:-1
         opacity: 0.2
-        transform: rotate(110deg)
-    &__items
+        transform: rotate(7deg) scale(1, -1)
+    
+.vectors
+    display: flex
+    flex-direction: column-reverse
+    &__header-line
+        width: 100%
+        margin-top: -2px 
+        height: 23px
+        background-color: $blue
+        border-top-right-radius: 12px
+    &__nav
         display: flex
-        justify-content: space-between
-        align-items: center
-        position: relative
-        z-index: 5
-        
-        .vectors
-            &__item
-                position: relative
-            &__counter
-                position: absolute
-                z-index: 10
-                padding: 13px 23px
-                border-radius: 11px
-                background-color: $blue
-                @include font-styles(24px, 600, normal, 0, $white)
-            &__text
-                position: absolute
-                left: 80px
-                bottom: 0
-                max-width: 264px
-                height: 60px
+        & > input[type="radio"]:checked + label
+            color: $white
+            background-color: $blue
+            @include transition
+        &-item
+            display: block
+            margin-right: -1px
+            border: 1px solid $blue
+            border-top-left-radius: 12px 
+            border-top-right-radius: 12px 
+            padding: 18px 27px 13px
+            background-color: $semiwhite
+            @include font-styles(20px, 700, normal, 0, $blue)
+        & > input[type="radio"]
+            display: none
+    &__body
+        display: none
+        height: 374px
+        border: 1px solid $blue
+        padding: 43px 40px
+        border-bottom-left-radius: 12px
+        border-bottom-right-radius: 12px
+        .vectors__content
+            &-text
+                h3
+                    @include font-styles(20px, 600, normal, 0, $dark)
+                    margin-bottom: 24px
+                    text-transform: uppercase
+                p
+                    @include font-styles(16px, 500, normal, 0, $dark)
+                    margin-bottom: 16px
+                    text-transform: uppercase
+                ul
+                    text-transform: uppercase
+                    padding-left: 22px
+                ul:not(:last-child)
+                    margin-bottom: 24px
+                li
+                    list-style-type: disc
+                    margin-bottom: 6px
+                a
+                    color: inherit
+            &_first
                 display: flex
-                align-items: center
-                @include font-styles(20px, 500, normal, 0, $dark)
-            &__image
-                border-radius: 11px
-                height: 287px
-                mask: url(../img/clip-advantages.svg)
-                mask-size: cover
-                mask-position: bottom left
-                mask-composite: exclude
-                mask-repeat: no-repeat
+                justify-content: space-between
+
+
+    #body-1:has(~ .vectors__nav > #tab-btn-1:checked),
+    #body-2:has(~ .vectors__nav > #tab-btn-2:checked),
+    #body-3:has(~ .vectors__nav > #tab-btn-3:checked)
+        display: block
