@@ -7,12 +7,12 @@
         <div class="vendors__list">
           <div class="swiper swiper__vendors">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" id="our-vendors">
               <!-- Slides -->
                <% for (vendor of vendors) { %>
               <div class="swiper-slide">
-                <div class="our-vendors__company" id="our-vendors">
-                  <a href="/vendors/<%= vendor.slug %>">
+                <!-- <div class="our-vendors__company" > -->
+                  <a class="our-vendors__company" href="/vendors/<%= vendor.slug %>">
                     <div class="our-vendors__company-image">
                       <img src="/uploads/vendors/<%= vendor.imageUrl %>" alt="company-image" />
                     </div>
@@ -20,7 +20,7 @@
                       <p>Подробнее</p>
                     </div>
                   </a>
-                </div>
+                <!-- </div> -->
               </div>
               <% } %>
               <!-- <div class="swiper-slide">

@@ -76,6 +76,10 @@ app.use(multer({storage: storageConfig}).any())
 
 app.use('/', router)
 
+app.use(function (req, res) {
+    res.render("pages/404.ejs");
+});
+
 app.listen(PORT, () => {
     console.log(`>>> Server started on port: ${PORT}`);
 })

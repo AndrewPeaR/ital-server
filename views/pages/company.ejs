@@ -10,12 +10,12 @@
             alt="<%= vendor.imageUrl %>"
           />
         </div>
-        <a
+        <!-- <a
           class="company__link"
           target="_blank"
           href="<%= vendor.officialSite %>"
           >Подробнее</a
-        >
+        > -->
       </div>
       <div class="company__info">
         <div class="company__tags">
@@ -34,7 +34,8 @@
                     <p class="company__text">На рынках стран СНГ продукция A4Tech присутствует с 1990 года. Компания MERLION является официальным дистрибьютором A4Tech на территории РФ более 10 лет.</p> -->
         </div>
         <div class="company__buttons">
-          <a href="/contacts" class="company__button">Связаться с нами</a>
+          <a href="/contacts" class="company__button company__button_primary">Связаться с нами</a>
+          <a href="<%= vendor.officialSite %>" target="_blank" class="company__button">Сайт вендора</a>
         </div>
       </div>
     </div>
@@ -49,7 +50,7 @@
             </p>
         </div>
         <% item.products.forEach(product => { %>
-        <a target="_blank" href="<%= product.link %>" class="company-blocks__product <%= product.link === '' ? 'company-blocks__product_without-link' : 'company-blocks__product_link' %>">
+        <a target="_blank" href="<%= product.link ? product.link : '#' %>" class="company-blocks__product <%= product.link === '' ? 'company-blocks__product_without-link' : 'company-blocks__product_link' %>">
           <div class="company-blocks__info">
             <h3 class="company-blocks__title"><%= product.title %></h3>
             <p class="company-blocks__description">
@@ -63,7 +64,7 @@
         <% }) %>
         <% if(item.link !== null && item.link !== ''){ %>
         <div class="btn_wrapper btn_company">
-            <a class="btn" href="<%= item.link %>">Подробнее</a>
+            <a class="btn" target="_blank" href="<%= item.link %>">Подробнее</a>
         </div>
         <% } %>
       </div>

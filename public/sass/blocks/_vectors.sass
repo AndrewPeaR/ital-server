@@ -19,15 +19,20 @@
         margin-top: -2px 
         height: 23px
         background-color: $blue
-        border-top-right-radius: 12px
+        // border-top-right-radius: 12px
     &__nav
         display: flex
+        justify-content: space-between
+        padding-right: 1px
         & > input[type="radio"]:checked + label
             color: $white
             background-color: $blue
             @include transition
         &-item
+            box-sizing: border-box
             display: block
+            width: 100%
+            text-align: center
             margin-right: -1px
             border: 1px solid $blue
             border-top-left-radius: 12px 
@@ -49,11 +54,9 @@
                 h3
                     @include font-styles(20px, 600, normal, 0, $dark)
                     margin-bottom: 24px
-                    text-transform: uppercase
                 p
                     @include font-styles(16px, 500, normal, 0, $dark)
                     margin-bottom: 16px
-                    text-transform: uppercase
                 ul
                     text-transform: uppercase
                     padding-left: 22px
@@ -64,9 +67,14 @@
                     margin-bottom: 6px
                 a
                     color: inherit
+                    @include fast-transition
+                    &:hover
+                        color: $blue
             &_first
                 display: flex
                 justify-content: space-between
+            &_three ul
+                text-transform: none
 
 
     #body-1:has(~ .vectors__nav > #tab-btn-1:checked),

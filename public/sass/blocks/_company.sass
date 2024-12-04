@@ -2,7 +2,7 @@
     margin-bottom: 68px
     margin-top: 87px
     display: grid
-    grid-template-columns: 0.4fr 1.6fr
+    grid-template-columns: 0.3fr 1.7fr
     gap: 50px
     position: relative
     z-index: 3
@@ -75,12 +75,13 @@
         white-space: pre-wrap
         margin-bottom: 45px
         text-align: justify
-        @include font-styles(24px, 400, normal, 0, $dark)
+        @include font-styles(20px, 400, normal, 0, $dark)
         @include mediaTablet
-            font-size: 18px
+            font-size: 16px
     &__buttons
         display: flex
         justify-content: center
+        gap: 30px
     &__button
         display: inline-block
         padding: 15px 30px
@@ -92,6 +93,12 @@
             font-size: 20px
             padding: 10px 15px
             height: auto
+        &_primary
+            background-color: $dark
+            color: $semiwhite
+            &:hover
+                box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.16), 0 30px 24px -10px rgba(154, 156, 165, 0.10), 0 12px 10px -6px rgba(154, 156, 165, 0.08), 0 4px 4px -4px rgba(30, 33, 44, 0.05)
+
         &:hover
             background-color: $dark
             color: $semiwhite
@@ -129,7 +136,7 @@
             & .section-title
                 margin-bottom: 0
     &__title-description
-        max-width: 390px
+        max-width: 480px
         text-align: right
         @include mediaTablet
             max-width: 100%
@@ -143,18 +150,18 @@
         cursor: default
         @include transition
         &:nth-child(even)
-            background-color: rgba(19, 123, 212, 0.16)
+            background-color: #D3E3F1
         
         &_link:hover
             cursor: pointer
             border: 1px solid $dark
             border-color: $dark
-            background-color: rgba(19, 123, 212, 0.37)
+            background-color: #A3C9EA
         
     &__info
-        padding: 25px 35px
+        padding: 15px 25px
         @include mediaMobile
-            padding: 15px 20px
+            padding: 10px 20px
             
     &__title
         margin-bottom: 20px

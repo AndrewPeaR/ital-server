@@ -35,7 +35,7 @@ router.get('/contacts', async (req, res) => {
     })
     res.render('pages/contacts.ejs', {photos: photos, office: office})
 })
-router.get('/vendors/:slug', async (req, res) => {
+router.get('/vendors/:slug', async (req, res, next) => {
     const vendor = await prisma.Company.findUnique({
         where: {
             slug: req.params.slug
@@ -48,8 +48,13 @@ router.get('/vendors/:slug', async (req, res) => {
             }
         }
     })
-    vendor.CompanyTag = vendor.CompanyTag.split(', ')
-    res.render('pages/company.ejs', {user: req.user, vendor: vendor})
+    if(vendor){
+        vendor.CompanyTag = vendor.CompanyTag.split(', ')
+        res.render('pages/company.ejs', {user: req.user, vendor: vendor})
+    }
+    else{
+        next()
+    }
 })
 
 // router.get('/register', (req, res) => res.render('admin/register.ejs'))
@@ -84,5 +89,6 @@ router.post('/create', async (req, res) => {
 router.use('/auth', authRouter)
 router.use('/posts', postsRouter)
 router.use('/admin', authCheck, adminRouter)
+
 
 module.exports = router

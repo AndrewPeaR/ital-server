@@ -15,7 +15,7 @@
     <div class="wrapper">
       <div class="my-swiper-wrapper">
         <div class="mySwiper-button-prev">
-          <img src="./img/arrow.svg" alt="arrow" />
+          <img src="./img/line-arrow.svg" alt="arrow" />
         </div>
         <div class="swiper swiper__customers">
           <!-- Additional required wrapper -->
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="mySwiper-button-next">
-          <img src="./img/arrow.svg" alt="arrow" />
+          <img src="./img/line-arrow.svg" alt="arrow" />
         </div>
       </div>
     </div>
@@ -51,44 +51,44 @@
                   <h3>Серверное оборудование</h3>
                   <p>Серверы мировых производителей</p>
                   <ul>
-                    <li><a href="#">Dell</a></li>
-                    <li><a href="#">HP</a></li>
-                    <li><a href="#">Huawei</a></li>
-                    <li><a href="#">Lenovo</a></li>
+                    <li><a href="vendors/dell">Dell</a></li>
+                    <li><a href="vendors/hp">HP</a></li>
+                    <li><a href="vendors/huawei">Huawei</a></li>
+                    <li><a href="vendors/lenovo">Lenovo</a></li>
                   </ul>
                   <p>Импортозамещение</p>
                   <ul>
-                    <li><a href="#">Depo</a></li>
-                    <li><a href="#">Qtech</a></li>
+                    <li><a href="vendors/depo">Depo</a></li>
+                    <li><a href="vendors/qtech">Qtech</a></li>
                   </ul>
               </div>
               <div class="vectors__content-text">
                   <h3>Системы хранения данных</h3>
                   <p>СХД ведущих производителей</p>
                   <ul>
-                    <li><a href="#">Dell</a></li>
-                    <li><a href="#">HP</a></li>
-                    <li><a href="#">Huawei</a></li>
-                    <li><a href="#">Lenovo</a></li>
+                    <li><a href="vendors/dell">Dell</a></li>
+                    <li><a href="vendors/hp">HP</a></li>
+                    <li><a href="vendors/huawei">Huawei</a></li>
+                    <li><a href="vendors/lenovo">Lenovo</a></li>
                   </ul>
                   <p>Российских производителей</p>
                   <ul>
-                    <li><a href="#">Depo</a></li>
-                    <li><a href="#">Qtech</a></li>
+                    <li><a href="vendors/depo">Depo</a></li>
+                    <li><a href="vendors/qtech">Qtech</a></li>
                   </ul>
               </div>
               <div class="vectors__content-text">
                   <h3>Сетевое оборудование</h3>
                   <p>Серверы мировых производителей</p>
                   <ul>
-                    <li><a href="#">Cisco</a></li>
-                    <li><a href="#">Juniper</a></li>
-                    <li><a href="#">Huawei</a></li>
-                    <li><a href="#">Brocade</a></li>
+                    <li><a href="vendors/cisco">Cisco</a></li>
+                    <li><a href="vendors/juniper">Juniper</a></li>
+                    <li><a href="vendors/huawei">Huawei</a></li>
+                    <li><a href="vendors/brocade">Brocade</a></li>
                   </ul>
                   <p>Реестровое оборудование</p>
                   <ul>
-                    <li><a href="#">Qtech</a></li>
+                    <li><a href="vendors/qtech">Qtech</a></li>
                   </ul>
               </div>
             </div>
@@ -99,8 +99,19 @@
             </div>
           </div>
           <div class="vectors__body" id="body-3">
-            <div class="vectors__content">
-              Раздел в разработке
+            <div class="vectors__content vectors__content_three">
+              <div class="vectors__content-text">
+                <p>Оборудование лидирующих мировых производителей имеет заводскую гарантию, однако она ограничена, в силу того, что вендоры ушли с рынка РФ. 
+                  Здесь требуется участие поставщика - посредник заводит сервисную заявку у вендора и ведет сервисный кейс от имени заказчика. Основная проблема в этой схеме - сроки замены комплектующих. Ранее на территории РФ были склады с запчастями, теперь доставка осуществляется со складов в Азии и СНГ.
+                  Партнеры ИТ-Альянс могут воспользоваться дополнительным сервисными услугами компании:</p>
+                  <ul>
+                    <li>Расширенная техническая поддержка с различным уровенем SLA для оборудования Lenovo.</li>
+                    <li>Расширенная техническая поддержка с различным уровенем SLA для оборудования Huawei.</li>
+                    <li>Проектная поставка сервисных комплектующих: Lenovo, Dell/EMC, Cisco, IBM, HPE, NetApp, Hitachi</li>
+                    <li>Проектная поставка новых комплектующих и refurb по каналам, проверенных временем.</li>
+                  </ul>
+              </div>
+              
             </div>
           </div>
           <div class="vectors__header-line"></div>
@@ -310,8 +321,8 @@
         <h2 class="section-title our-vendors__title">Наши вендоры</h2>
         <div class="our-vendors__companies">
           <% vendors.forEach(function(item){  %>
-          <div class="our-vendors__company">
-            <a href="/vendors/<%= item.slug %>">
+          <!-- <div class="our-vendors__company"> -->
+            <a class="our-vendors__company" href="/vendors/<%= item.slug %>">
               <div class="our-vendors__company-image">
                 <img src="/uploads/vendors/<%= item.imageUrl %>" alt="company-image">
               </div>
@@ -319,7 +330,7 @@
                 <p>Подробнее</p>
               </div>
             </a>
-          </div>
+          <!-- </div> -->
           <% }) %>
           <!-- <div class="our-vendors__company">
             <a href="#">
