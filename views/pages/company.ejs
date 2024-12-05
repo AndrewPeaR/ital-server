@@ -50,7 +50,7 @@
             </p>
         </div>
         <% item.products.forEach(product => { %>
-        <a target="_blank" href="<%= product.link ? product.link : '#' %>" class="company-blocks__product <%= product.link === '' ? 'company-blocks__product_without-link' : 'company-blocks__product_link' %>">
+        <a target="_blank" href="<%= product.link ? product.link : '' %>" <%- product.link ? '' : `onclick='return false'` %> class="company-blocks__product <%= product.link === '' ? 'company-blocks__product_without-link' : 'company-blocks__product_link' %>">
           <div class="company-blocks__info">
             <h3 class="company-blocks__title"><%= product.title %></h3>
             <p class="company-blocks__description">
