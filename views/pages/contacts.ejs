@@ -25,7 +25,7 @@
                   </div>
               </div>
           </div>
-            <div class="contacts__map">
+            <!-- <div class="contacts__map">
                 <div class="contacts__toggle" id="mainmap">
                     <input id="toggle__checkbox" type="checkbox" class="toggle__checkbox">
                     <label for="toggle__checkbox" class="toggle">
@@ -52,10 +52,43 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
         </div>
     </div>
+</section>
+
+<section>
+  <div class="wrapper contacts__toggle">
+    <div class="vectors">
+      <div class="vectors__body" id="body-1">
+        <div class="vectors__content vectors__content_first">
+            <div id="map" style="width: 100%; height: 100%"></div>
+        </div>
+      </div>
+      <div class="vectors__body" id="body-2">
+        <div class="vectors__content">
+          <div class="photos__wrapper">
+            <% for (photo of photos.slice(0, 5)) { %>
+            <div>
+                <a href="./uploads/photos/<%= photo.imageUrl %>" class="glightbox3" data-gallery="gallery1">
+                    <img src="/uploads/photos/<%= photo.imageUrl %>" alt="<%= photo.imageUrl %>">
+                </a>
+            </div>
+            <% } %>
+        </div>
+        </div>
+      </div>
+      <div class="vectors__header-line"></div>
+      <div class="vectors__nav">
+        <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+        <label class="vectors__nav-item" for="tab-btn-1">Адрес</label>
+        <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+        <label class="vectors__nav-item" for="tab-btn-2">Как к нам пройти</label>
+      </div>
+      
+    </div>
+  </div>
 </section>
 
 <section class="bg-wrapper" id="backform">

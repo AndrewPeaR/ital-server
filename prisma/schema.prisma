@@ -102,3 +102,11 @@ model Products {
   CompanyBlocks   CompanyBlocks? @relation(fields: [companyBlocksId], references: [id])
   companyBlocksId Int?
 }
+
+model Portfolio {
+  id          Int     @id @default(autoincrement())
+  companyName String
+  description String?
+  documentUrl String?
+  photo       String?
+}

@@ -1,0 +1,54 @@
+.portfolio
+    margin-bottom: 80px
+    .vectors__nav
+        justify-content: left
+        overflow: scroll
+        -ms-overflow-style: none
+        scrollbar-width: none
+        &::-webkit-scrollbar
+            display: none
+        &-item
+            width: auto
+            border: 1px solid $dark
+            color: $dark
+            white-space: nowrap
+    .vectors__nav > input[type=radio]:checked + label
+        background-color: $dark
+    .vectors__body
+        border: 1px solid $dark
+        border-top-right-radius: 12px
+        background-color: $dark
+        padding: 57px 87px
+        height: 500px
+    .vectors__header-line
+        background-color: $dark
+    .vectors__content
+        color: $white
+        display: flex
+        justify-content: space-between
+        gap: 60px
+        height: 100%
+    .portfolio__content
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        max-width: 50%
+    .portfolio__title
+        margin-bottom: 15px
+        @include font-styles(48px, 700, normal, 0, $white)
+    .portfolio__description
+        text-align: justify
+        @include font-styles(20px, 400, normal, 0, $white)
+    .portfolio__photo
+        img
+            object-fit: cover
+            height: 100%
+    .portfolio__doc
+        @include font-styles(20px, 400, normal, 0, $white)
+        .portfolio__download
+            margin-top: 10px
+            display: flex
+            gap: 10px
+            color: inherit
+            .portfolio__file-weight
+                @include font-styles(10px, 300, normal, 0, $white)
