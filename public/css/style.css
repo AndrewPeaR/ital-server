@@ -2059,6 +2059,7 @@ html, body {
 }
 .contacts__address .contacts__image {
   width: 60%;
+  width: 100%;
 }
 .contacts__address .contacts__image img {
   border-radius: 5px;
