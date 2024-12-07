@@ -25,9 +25,11 @@
             border: 2px solid $dark
             background-color: $semiwhite
             width: 100%
+            border-radius: 5px
             &__drag
                 background-color: $dark
                 height: 6px
+                border-radius: 5px
     &__description
         display: flex
         justify-content: space-between
@@ -48,6 +50,7 @@
         @include mediaMobile
             gap: 15px
         &-next, &-back
+            border-radius: 5px
             cursor: pointer
             z-index: 6
             aspect-ratio: 1

@@ -166,6 +166,7 @@ html, body {
   height: 53px;
   padding: 13px 27px;
   border: 1px solid #313131;
+  border-radius: 5px;
   text-transform: uppercase;
   transition: all 0.2s ease-out;
   font-size: 20px;
@@ -224,6 +225,7 @@ html, body {
 }
 
 .burger {
+  border-radius: 5px;
   cursor: pointer;
   display: flex;
   position: relative;
@@ -690,6 +692,11 @@ html, body {
 }
 .vectors__body .vectors__content_three ul {
   text-transform: none;
+}
+.vectors__line {
+  height: 300px;
+  width: 1px;
+  background-color: #d1d1d1;
 }
 .vectors #body-1:has(~ .vectors__nav > #tab-btn-1:checked),
 .vectors #body-2:has(~ .vectors__nav > #tab-btn-2:checked),
@@ -1404,10 +1411,12 @@ html, body {
   border: 2px solid #313131;
   background-color: #F7F7F7;
   width: 100%;
+  border-radius: 5px;
 }
 .vendors__list .swiper__vendors-scrollbar__drag {
   background-color: #313131;
   height: 6px;
+  border-radius: 5px;
 }
 .vendors__description {
   display: flex;
@@ -1443,6 +1452,7 @@ html, body {
   }
 }
 .vendors__controls-next, .vendors__controls-back {
+  border-radius: 5px;
   cursor: pointer;
   z-index: 6;
   aspect-ratio: 1;
@@ -1814,6 +1824,7 @@ html, body {
   width: 60%;
 }
 .contacts__address .contacts__image img {
+  border-radius: 5px;
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -1864,6 +1875,7 @@ html, body {
 }
 .contacts__address .contacts__info .info__button {
   margin-top: 15px;
+  border-radius: 5px;
   padding: 18px 65px;
   background-color: #313131;
   font-size: 20px;
@@ -1880,6 +1892,9 @@ html, body {
 }
 .contacts__toggle {
   margin-bottom: 80px;
+}
+.contacts__toggle #map {
+  border-radius: 5px;
 }
 .contacts__toggle .ymaps3x0--main-engine-container {
   filter: grayscale(100%);
@@ -1911,6 +1926,7 @@ html, body {
 }
 .contacts__toggle .photos__wrapper div {
   overflow: hidden;
+  border-radius: 5px;
   filter: brightness(60%);
   transition: all 0.2s ease-out;
 }
@@ -1967,8 +1983,9 @@ html, body {
   content: url("../img/company-bg.svg");
   position: absolute;
   z-index: -1;
-  top: -80px;
-  left: -500px;
+  top: -180px;
+  left: -540px;
+  transform: scale(0.8);
 }
 @media screen and (max-width: 768px) {
   .company::before {
@@ -1989,6 +2006,7 @@ html, body {
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 640px) {
   .company__logo {
@@ -2032,6 +2050,7 @@ html, body {
   }
 }
 .company__tags .company__tag {
+  border-radius: 5px;
   padding: 4px 15px;
   background-color: #137ED8;
   text-transform: uppercase;
@@ -2084,6 +2103,7 @@ html, body {
 }
 .company__button {
   display: inline-block;
+  border-radius: 5px;
   padding: 15px 30px;
   border: 2px solid #313131;
   background-color: #F7F7F7;
@@ -2101,16 +2121,18 @@ html, body {
     height: auto;
   }
 }
+.company__button:hover {
+  background-color: #313131;
+  color: #F7F7F7;
+}
 .company__button_primary {
   background-color: #313131;
   color: #F7F7F7;
 }
 .company__button_primary:hover {
+  background-color: #137ED8;
+  border-color: #137ED8;
   box-shadow: 0 80px 80px -20px rgba(154, 156, 165, 0.16), 0 30px 24px -10px rgba(154, 156, 165, 0.1), 0 12px 10px -6px rgba(154, 156, 165, 0.08), 0 4px 4px -4px rgba(30, 33, 44, 0.05);
-}
-.company__button:hover {
-  background-color: #313131;
-  color: #F7F7F7;
 }
 
 .company-blocks__block {

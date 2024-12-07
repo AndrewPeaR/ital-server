@@ -11,8 +11,14 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 router.get('/', async (req, res) => {
+    const mainVendors = ['huawei', 'xfusion', 'dell', 'cisco']
     const vendors = await prisma.Company.findMany({
-        take: 4
+        // take: 4
+        where: {
+            slug: {
+                in: mainVendors
+            }
+        }
     })
     const customers = await prisma.Customers.findMany()
     const info = await prisma.about.findMany()
