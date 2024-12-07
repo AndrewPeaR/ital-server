@@ -50,7 +50,7 @@ const swiperVendors = new Swiper(".swiper__vendors", {
   //   delay: 3000,
   // },
   grid: {
-    rows: 1
+    rows: 2
   },
   scrollbar: {
     el: ".swiper__vendors-scrollbar",

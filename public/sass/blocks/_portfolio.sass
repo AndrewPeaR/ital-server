@@ -1,5 +1,13 @@
 .portfolio
     margin-bottom: 80px
+    &__main-title
+        @include mediaSmallDesktop
+            font-size: 50px
+        @include mediaTablet
+            margin-bottom: 40px
+            font-size: 38px
+        @include mediaSmallTablet
+            font-size: 32px
     .vectors__nav
         justify-content: left
         overflow: scroll
@@ -19,7 +27,13 @@
         border-top-right-radius: 12px
         background-color: $dark
         padding: 57px 87px
-        height: 500px
+        height: unset
+        @include mediaSmallDesktop
+            padding: 26px 46px
+        @include mediaSmallTablet
+            padding: 20px 20px
+        @include mediaMobile
+            border-top-right-radius: unset
     .vectors__header-line
         background-color: $dark
     .vectors__content
@@ -28,23 +42,51 @@
         justify-content: space-between
         gap: 60px
         height: 100%
+        @include mediaSmallDesktop
+            gap: 35px
+        @include mediaSmallTablet
+            gap: 15px
+        @include mediaMobile
+            flex-direction: column
+        
     .portfolio__content
         display: flex
         flex-direction: column
         justify-content: space-between
         max-width: 50%
+        @include mediaMobile
+            max-width: 100%
     .portfolio__title
         margin-bottom: 15px
         @include font-styles(48px, 700, normal, 0, $white)
+        @include mediaTablet
+            font-size: 38px
+        @include mediaSmallTablet
+            font-size: 32px
     .portfolio__description
         text-align: justify
+        margin-bottom: 40px
         @include font-styles(20px, 400, normal, 0, $white)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaMobile
+            font-size: 14px
     .portfolio__photo
+        display: flex
+        align-items: center
         img
             object-fit: cover
             height: 100%
+            max-height: 400px
+            @include mediaSmallTablet
+                height: unset
+                width: 100%
     .portfolio__doc
         @include font-styles(20px, 400, normal, 0, $white)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaMobile
+            font-size: 14px
         .portfolio__download
             margin-top: 10px
             display: flex

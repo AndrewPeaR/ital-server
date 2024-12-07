@@ -2,6 +2,16 @@
     margin-bottom: 90px
     position: relative
     z-index: 2
+    @include mediaTablet
+        margin-bottom: 60px
+    @include mediaMobile
+        margin-bottom: 40px
+    .section-title
+        @include mediaTablet
+            font-size: 52px
+            margin-bottom: 30px
+        @include mediaMobile
+            font-size: 42px
     &::after
         content: url('../img/company-bg.svg')
         position: absolute
@@ -10,6 +20,22 @@
         z-index:-1
         opacity: 0.2
         transform: rotate(7deg) scale(1, -1)
+        @include mediaSmallDesktop
+            right: 25%
+        @media screen and (max-width: 860px)
+            right: 16%
+            bottom: -67%
+            transform: rotate(7deg) scale(0.65)
+
+        @include mediaTablet
+            bottom: -70%
+            right: 13%
+        @include mediaSmallTablet
+            bottom: -63%
+            right: -17%
+        @include mediaMobile
+            bottom: 4%
+            right: -50%
     
 .vectors
     display: flex
@@ -19,7 +45,8 @@
         margin-top: -2px 
         height: 23px
         background-color: $blue
-        // border-top-right-radius: 12px
+        @media screen and (max-width: 860px)
+            height: 16px
     &__nav
         display: flex
         justify-content: space-between
@@ -40,6 +67,14 @@
             padding: 18px 27px 13px
             background-color: $semiwhite
             @include font-styles(20px, 700, normal, 0, $blue)
+            @include mediaSmallDesktop
+                padding: 15px 10px
+            @media screen and (max-width: 860px)
+                font-size: 16px
+            @include mediaTablet
+                display: flex
+                justify-content: center
+                align-items: center
         & > input[type="radio"]
             display: none
     &__body
@@ -49,14 +84,30 @@
         padding: 43px 40px
         border-bottom-left-radius: 12px
         border-bottom-right-radius: 12px
+        @include mediaSmallDesktop
+            padding: 28px 25px
+        @media screen and (max-width: 860px)
+            height: 310px
+            padding: 15px 12px
+        @include mediaTablet
+            height: 370px
+        @include mediaMobile
+            height: auto
+
         .vectors__content
             &-text
                 h3
                     @include font-styles(20px, 600, normal, 0, $dark)
                     margin-bottom: 24px
+                    @media screen and (max-width: 860px)
+                        font-size: 16px
+                        margin-bottom: 12px
                 p
                     @include font-styles(16px, 500, normal, 0, $dark)
                     margin-bottom: 16px
+                    @media screen and (max-width: 860px)
+                        font-size: 14px
+                        margin-bottom: 10px
                 ul
                     text-transform: uppercase
                     padding-left: 22px
@@ -73,13 +124,23 @@
             &_first
                 display: flex
                 justify-content: space-between
+                gap: 10px
+                @include mediaMobile
+                    flex-direction: column
             &_three ul
                 text-transform: none
-
+            
     &__line
         height: 300px
         width: 1px
         background-color: #d1d1d1
+        @media screen and (max-width: 860px)
+            height: 254px
+        @include mediaTablet
+            height: 335px
+        @include mediaMobile
+            width: 100%
+            height: 1px
 
     #body-1:has(~ .vectors__nav > #tab-btn-1:checked),
     #body-2:has(~ .vectors__nav > #tab-btn-2:checked),

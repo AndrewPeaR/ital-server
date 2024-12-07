@@ -1,10 +1,23 @@
 .service
     margin-bottom: 80px
+    @include mediaTablet
+        margin-bottom: 40px
+    &__main-title
+        @include mediaSmallDesktop
+            font-size: 50px
+        @include mediaTablet
+            font-size: 38px
+        @include mediaSmallTablet
+            font-size: 32px
     &__text
         text-align: justify
         margin-top: -35px
         margin-bottom: 30px
         @include font-styles(20px, 400, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaSmallTablet
+            font-size: 14px
 
     &__items
         padding-left: 20px
@@ -15,9 +28,17 @@
     &__title
         margin-bottom: 10px
         @include font-styles(20px, 500, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaSmallTablet
+            font-size: 14px
     
     &__list
         @include font-styles(20px, 400, normal, 0, $dark)
+        @include mediaTablet
+            font-size: 16px
+        @include mediaSmallTablet
+            font-size: 14px
         padding-left: 30px
         li
             list-style-type: disc

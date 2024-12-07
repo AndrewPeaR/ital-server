@@ -7,11 +7,13 @@
         margin-bottom: 40px
     &__title
         max-width: 475px
-        margin-bottom: 86px
+        margin-bottom: 72px
         @include mediaTablet
             max-width: 375px
             margin-bottom: 46px
             font-size: 52px
+        @include mediaMobile
+            font-size: 42px
     &::after
         content: url(../img/design-line2.svg)
         position: absolute
@@ -34,8 +36,12 @@
         height: 180px
         @include mediaTablet
             gap: 15px
-        @include mediaMobile
-            flex-direction: column
+        @include mediaSmallTablet
+            display: grid
+            grid-template-columns: 1fr 1fr
+            grid-template-rows: 1fr 1fr
+        // @include mediaMobile
+        //     flex-direction: column
 
     &__info
         position: relative
@@ -54,6 +60,8 @@
     position: relative
     overflow-y: hidden
     border-radius: 15px
+    @include mediaSmallTablet
+        width: 100%
     &-image
         display: flex
         height: 100%
@@ -64,10 +72,8 @@
         @include mediaTablet
             height: 150px
             padding: 0 10px
-        @include mediaMobile
-            max-width: 100%
-            height: 100px
-            justify-content: center
+        @include mediaSmallTablet
+            height: 100%
         img
             height: 100%
             object-fit: contain

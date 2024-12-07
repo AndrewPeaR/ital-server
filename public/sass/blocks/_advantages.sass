@@ -3,6 +3,16 @@
     position: relative
     .section-title
         margin-bottom: 20px
+        @include mediaTablet
+            font-size: 52px
+        @include mediaMobile
+            font-size: 38px
+    .section-description
+        margin-bottom: 30px
+        @include mediaTablet
+            font-size: 24px
+        @include mediaMobile
+            font-size: 18px
     &::after
         content: url('../img/company-bg.svg')
         position: absolute
@@ -17,10 +27,14 @@
         align-items: center
         position: relative
         z-index: 5
-        
+        gap: 10px
+        // @include mediaSmallTablet
+        //     flex-direction: column
         .advantages
             &__item
                 position: relative
+                @include mediaSmallTablet
+                    max-height: 150px
             &__counter
                 position: absolute
                 z-index: 10
@@ -28,6 +42,9 @@
                 border-radius: 11px
                 background-color: $blue
                 @include font-styles(24px, 600, normal, 0, $white)
+                @include mediaMobile
+                    font-size: 16px
+                    padding: 8px 12px
             &__text
                 position: absolute
                 left: 80px
@@ -37,10 +54,43 @@
                 display: flex
                 align-items: center
                 @include font-styles(24px, 500, normal, 0, $dark)
+                @include mediaSmallDesktop
+                    left: 65px
+                    font-size: 20px
+                @media screen and (max-width: 880px)
+                    left: 57px
+                    bottom: -2%
+                    font-size: 18px
+                @include mediaTablet
+                    bottom: -4%
+                    width: 100%
+                    max-width: 177px
+                    left: unset
+                    right: -6px
+                    font-size: 14px
+                @media screen and (max-width: 680px)
+                    right: -20px
+                @include mediaSmallTablet
+                    max-width: 150px
+                    bottom: -35%
+                    right: 0%
+                    text-align: center
+                @include mediaMobile
+                    bottom: -41%
+                @media screen and (max-width: 440px)
+                    bottom: -55%
+
+                
             &__image
+                max-height: inherit
                 border-radius: 11px
                 mask: url(../img/clip-advantages.svg)
                 mask-size: cover
                 mask-position: top left
                 mask-composite: exclude
                 mask-repeat: no-repeat
+                img
+                    max-height: inherit
+                    aspect-ratio: 1 / 1            
+                    object-fit: cover
+                
