@@ -42,7 +42,7 @@
     <div class="company-blocks">
       <% vendor.companyBlocks.forEach(item => { %>
         <% if(item.products.length > 0){ %>
-      <div class="company-blocks__block">
+      <div class="company-blocks__block" id="<%= item.title %>">
         <div class="company-blocks__text">
             <h3 class="section-title"><%= item.title %></h3>
             <p class="company-blocks__title-description">

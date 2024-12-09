@@ -5,15 +5,30 @@
         margin-bottom: 80px
     @include mediaMobile
         margin-bottom: 40px
+        margin-top: 20px
     &__title
-        max-width: 350px
+        // max-width: 350px
         line-height: 110%
-        margin-bottom: 86px
+        margin-bottom: 46px
         @include mediaTablet
             font-size: 50px
             margin-bottom: 30px
+        @include mediaMobile
+            font-size: 32px
     &__list
         margin-bottom: 20px
+        // ---
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: 1fr
+        @include mediaSmallTablet
+            grid-template-columns: repeat(3, 1fr)
+            row-gap: 15px
+        @include mediaMobile
+            grid-template-columns: repeat(2, 1fr)
+
+        .vendors__company
+            width: 100%
         .swiper-wrapper
             height: 380px
             @include mediaTablet
@@ -37,7 +52,7 @@
         padding-left: 5px
         display: flex
         gap: 10px
-        max-width: 890px
+        // max-width: 890px
         @include font-styles(20px, 400, normal, 0, $dark)
         @include mediaTablet
             font-size: 16px

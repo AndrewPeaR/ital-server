@@ -62,8 +62,8 @@
             text-align: center
             margin-right: -1px
             border: 1px solid $blue
-            border-top-left-radius: 12px 
-            border-top-right-radius: 12px 
+            border-top-left-radius: 5px 
+            border-top-right-radius: 5px 
             padding: 18px 27px 13px
             background-color: $semiwhite
             @include font-styles(20px, 700, normal, 0, $blue)
@@ -79,15 +79,19 @@
             display: none
     &__body
         display: none
-        height: 374px
+        height: 401px
         border: 1px solid $blue
         padding: 43px 40px
-        border-bottom-left-radius: 12px
-        border-bottom-right-radius: 12px
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+        &:first-child
+            padding: 43px 0
+            
+                
         @include mediaSmallDesktop
             padding: 28px 25px
         @media screen and (max-width: 860px)
-            height: 310px
+            height: 367px
             padding: 15px 12px
         @include mediaTablet
             height: 370px
@@ -96,6 +100,11 @@
 
         .vectors__content
             &-text
+                &:not(:last-child)
+                    border-right: 1px solid #d1d1d1
+                    @include mediaMobile
+                        border-right: unset
+
                 h3
                     @include font-styles(20px, 600, normal, 0, $dark)
                     margin-bottom: 24px
@@ -124,22 +133,22 @@
             &_first
                 display: flex
                 justify-content: space-between
-                gap: 10px
+                .vectors__content-text
+                    width: 100%
+                    padding-left: 40px
+                    @media screen and (max-width: 600px)
+                        padding-left: 10px
+
                 @include mediaMobile
                     flex-direction: column
             &_three ul
                 text-transform: none
-            
     &__line
-        height: 300px
-        width: 1px
-        background-color: #d1d1d1
-        @media screen and (max-width: 860px)
-            height: 254px
-        @include mediaTablet
-            height: 335px
+        display: none
         @include mediaMobile
-            width: 100%
+            display: block
+            margin: 25px 25px
+            background-color: #d1d1d1
             height: 1px
 
     #body-1:has(~ .vectors__nav > #tab-btn-1:checked),
