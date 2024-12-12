@@ -20,6 +20,12 @@ router.get('/', async (req, res) => {
             }
         }
     })
+    const huaweiIndex = vendors.map(e => e.slug).indexOf('huawei')
+    const xfusionIndex = vendors.map(e => e.slug).indexOf('xfusion')
+    const huaweiElement = vendors.splice(huaweiIndex, 1)
+    vendors.splice(0, 0, huaweiElement[0])
+    const xfusionElement = vendors.splice(xfusionIndex, 1)
+    vendors.splice(1, 0, xfusionElement[0])
     const customers = await prisma.Customers.findMany()
     const info = await prisma.about.findMany()
     res.render('pages/index.ejs', {vendors: vendors, info: info, customers: customers})
