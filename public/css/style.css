@@ -976,26 +976,26 @@ html, body {
 .my-swiper-wrapper {
   position: relative;
   z-index: 3;
-  padding: 60px 80px;
+  padding: 30px 0;
 }
 @media screen and (max-width: 1150px) {
   .my-swiper-wrapper {
-    padding: 20px 60px;
+    padding: 15px 0;
   }
 }
 @media screen and (max-width: 768px) {
   .my-swiper-wrapper {
-    padding: 10px 60px;
+    padding: 10px 0;
   }
 }
 @media screen and (max-width: 640px) {
   .my-swiper-wrapper {
-    padding: 10px 40px;
+    padding: 10px 0;
   }
 }
 
 .running-stroke .swiper {
-  height: 74px;
+  height: 100px;
 }
 
 .running-stroke .swiper-slide a {
@@ -1238,14 +1238,14 @@ html, body {
   z-index: 5;
 }
 .our-vendors__companies {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   position: relative;
   z-index: 5;
   justify-content: space-between;
   gap: 30px;
   margin-bottom: 30px;
-  height: 180px;
 }
 @media screen and (max-width: 768px) {
   .our-vendors__companies {
@@ -1256,7 +1256,7 @@ html, body {
   .our-vendors__companies {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
   }
 }
 .our-vendors__info {
@@ -1282,7 +1282,7 @@ html, body {
 }
 
 .our-vendors__company {
-  width: 25%;
+  width: 100%;
   height: 100%;
   display: block;
   position: relative;
@@ -1315,6 +1315,7 @@ html, body {
 }
 .our-vendors__company-image img {
   height: 100%;
+  max-height: 100px;
   object-fit: contain;
 }
 .our-vendors__company-button {
@@ -2192,7 +2193,7 @@ html, body {
 .contacts__toggle .photos__wrapper div {
   overflow: hidden;
   border-radius: 5px;
-  filter: brightness(60%);
+  filter: brightness(90%);
   transition: all 0.2s ease-out;
 }
 .contacts__toggle .photos__wrapper div:hover {
