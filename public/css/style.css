@@ -741,6 +741,12 @@ html, body {
     right: -50%;
   }
 }
+@media screen and (max-width: 395px) {
+  .vectors-bg::after {
+    bottom: 7%;
+    right: -80%;
+  }
+}
 
 .vectors {
   display: flex;
@@ -799,6 +805,12 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .vectors__nav-item {
+    font-size: 14px;
+    padding: 7px 5px;
   }
 }
 .vectors__nav > input[type=radio] {

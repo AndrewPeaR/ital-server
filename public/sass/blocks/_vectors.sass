@@ -36,6 +36,9 @@
         @include mediaMobile
             bottom: 4%
             right: -50%
+        @media screen and (max-width: 395px)
+            bottom: 7%
+            right: -80%
     
 .vectors
     display: flex
@@ -75,6 +78,10 @@
                 display: flex
                 justify-content: center
                 align-items: center
+            @media screen and (max-width: 400px)
+                font-size: 14px
+                padding: 7px 5px
+            
         & > input[type="radio"]
             display: none
     &__body
