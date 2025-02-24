@@ -161,6 +161,7 @@ router.post('/create', async (req, res) => {
             res.redirect('/')
         } else {
             console.log("Robot")
+            // alert('lol')
             res.redirect('/contacts')
         }
     });
