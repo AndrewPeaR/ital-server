@@ -10,6 +10,9 @@ const bcrypt = require('bcrypt')
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
+const https = require('https'),
+    querystring = require('querystring');
+
 router.get('/', async (req, res) => {
     const mainVendors = ['huawei', 'xfusion', 'dell', 'lenovo', 'mellanox', 'brocade', 'cisco', 'juniper']
     const vendors = await prisma.Company.findMany({
@@ -87,15 +90,80 @@ router.get('/vendors/:slug', async (req, res, next) => {
 
 
 router.post('/create', async (req, res) => {
-    const newQuestion = await prisma.Questions.create({
-        data: {        
-            name: req.body.name,
-            phoneNumber: req.body.phone,
-            email: req.body.email,
-            question: req.body.message,
+    let message = ''
+    if (req.body.message){
+        message += req.body.message
+    }
+    const SMARTCAPTCHA_SERVER_KEY = "";
+    function check_captcha(token, callback) {
+        const postData = querystring.stringify({
+            secret: SMARTCAPTCHA_SERVER_KEY,
+            token: token,
+        });
+    
+        const options = {
+            hostname: 'smartcaptcha.yandexcloud.net',
+            port: 443,
+            path: '/validate',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Length': Buffer.byteLength(postData),
+            },
+        };
+    
+        const req = https.request(options, (res) => {
+            let content = '';
+    
+            res.on('data', (chunk) => {
+                content += chunk;
+            });
+    
+            res.on('end', () => {
+                if (res.statusCode !== 200) {
+                    console.error(`Allow access due to an error: code=${res.statusCode}; message=${content}`);
+                    callback(true);
+                    return;
+                }
+    
+                try {
+                    const parsedContent = JSON.parse(content);
+                    callback(parsedContent.status === 'ok');
+                } catch (err) {
+                    console.error('Error parsing response: ', err);
+                    callback(true);
+                }
+            });
+        });
+    
+        req.on('error', (error) => {
+            console.error(error);
+            callback(true);
+        });
+    
+        // Write the POST data to the request body
+        req.write(postData);
+        req.end();
+    }
+    
+    
+    let token = req.body['smart-token'];
+    check_captcha(token, async (passed) => {
+        if (passed) {
+            const newQuestion = await prisma.Questions.create({
+                data: {        
+                    name: req.body.name,
+                    phoneNumber: req.body.phone,
+                    email: req.body.email,
+                    question: message,
+                }
+            })
+            res.redirect('/')
+        } else {
+            console.log("Robot")
+            res.redirect('/contacts')
         }
-    })
-    res.redirect('/')
+    });
 })
 
 router.use('/auth', authRouter)
